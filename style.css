@@ -1,3 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
 body {
-    margin: 0px;
+  margin: 0px;
+  font-family: "Lato", sans-serif;
+}
+
+.mobile {
+  position: relative;
+  width: 411px;
+  height: 731px;
+  background-color: rgb(139, 70, 136);
+}
+
+.head-container {
+  background-color: rgb(129, 129, 139);
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 411px;
+  height: 84px;
+  left: 0px;
+  top: 0px;
+}
+
+.barra-acima {
+  background-color: aquamarine;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  height: 24px;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+}
+
+.barra-abaixo {
+  position: absolute;
+  width: 411px;
+  height: 60px;
+  left: 0px;
+  top: 24px;
+  background-color: blueviolet;
+}
+
+.transacao {
+  position: absolute;
+  width: 371px;
+  height: 290px;
+  left: 20px;
+  top: 110px;
+  background-color: rgb(62, 78, 73);
+}
+
+.conta {
+  position: absolute;
+  width: 371px;
+  height: 281px;
+  left: 20px;
+  top: 420px;
+  background-color: rgb(150, 189, 176);
 }

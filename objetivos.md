@@ -1,6 +1,6 @@
 https://www.figma.com/file/U8ojEXx2vxSK2KOvoBvHVH8y/Frontend-test?node-id=13%3A42
 
-1. criar uma SPA (Single Page Application) seguindo o layout proposto
+1. Criar uma SPA (Single Page Application) seguindo o layout proposto.
 
 2. Alterar o link “Resumo” para “Cadastro de transações”, Alterar o link “Dashboard” para “Limpar dados”, Excluir o link “Configurações”.
 
