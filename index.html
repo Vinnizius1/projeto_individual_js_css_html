@@ -5,49 +5,85 @@
     <meta content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ATIVIDADE 1 – HTML/CSS</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./css/style.css" />
     <link rel="icon" href="./img/logo-colorido@2x.png" />
   </head>
 
   <body>
     <div class="mobile">
-      <!-- menu -->
-      <header>
-        <div class="header">
-          <!-- menu (acima) -->
-          <section>
-            <div class="barra-acima">
-              <div class="icones-cima-esquerda">
-                <img
-                  class="frame6"
-                  src="img/Frame 6.png"
-                  alt="ícone de sinal da conexão"
-                />
-              </div>
-              <div class="icones-cima-meio">
-                <img class="horas" src="img/9_42 AM.png" alt="horas" />
-              </div>
-              <div class="icones-cima-direita">
-                <img
-                  class="frame8"
-                  src="img/Frame 8.png"
-                  alt="sinal de bateria e bluetooth"
-                />
-              </div>
+
+      <header class="header">
+
+        <!-- menu (acima) -->
+        <section>
+          <div class="barra-acima">
+            <div>
+              <img
+                class="frame6"
+                src="img/Frame 6.png"
+                alt="ícone de sinal da conexão"
+              />
             </div>
-          </section>
-          <!-- menu (abaixo) -->
-          <section>
-            <div class="barra-abaixo">Barra debaixo</div>
-          </section>
-        </div>
+            <div>
+              <img
+                class="horas"
+                src="img/9_42 AM.png"
+                alt="indicador de horas"
+              />
+            </div>
+            <div>
+              <img
+                class="frame8"
+                src="img/Frame 8.png"
+                alt="sinal de bateria e bluetooth"
+              />
+            </div>
+          </div>
+        </section>
+
+        <!-- menu (abaixo) -->
+        <section>
+          <div class="barra-abaixo">
+            <div>
+              <img class="logo" src="img/Ellipse 13.png" alt="ícones da logo" />
+            </div>
+            <h2 class="titulo">Controle Financeiro</h2>
+            <div>
+              <img
+                class="hamburguer"
+                src="img/menu-hamburguer.png"
+                alt="menu hamburguer"
+              />
+            </div>
+          </div>
+        </section>
       </header>
 
-      <!-- main -->
       <main>
-        <div class="transacao">
-          <section>Transaction form</section>
-        </div>
+        <!-- main (acima) -->
+        <form class="transacao">
+
+          <div class="input">
+            <label for="tipo">Tipo de transação</label>
+            <select id="tipo">
+              <option value=""></option>
+            </select>
+          </div>
+
+          <div class="input">
+            <label for="mercadoria">Nome da mercadoria</label>
+            <input type="text" id="mercadoria" />
+          </div>
+
+          <div class="input">
+            <label for="valor">Valor</label>
+            <input type="number" id="valor" />
+          </div>
+
+          <button class="input">Adicionar transação</button>
+        </form>
+
+        <!-- main (abaixo) -->
         <div class="conta">
           <section>Account statement</section>
         </div>
