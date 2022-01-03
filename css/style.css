@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
-
 * {
   margin: 0;
   padding: 0;
@@ -82,6 +80,7 @@ body {
 .titulo {
   font-weight: 700;
   font-size: 20px;
+  color: #333;
 }
 
 .logo {
@@ -96,6 +95,17 @@ body {
 
 /* MAIN */
 /* Main (acima) */
+::-webkit-input-placeholder {
+  position: absolute;
+  width: 34px;
+  font-weight: 400;
+  font-size: 14px;
+  height: 22px;
+  left: 5px;
+  line-height: 29px;
+  color: #888;
+}
+
 .transacao {
   position: absolute;
   width: 371px;
@@ -105,8 +115,77 @@ body {
   background-color: #fff;
 }
 
-.input {
+.input-transacao {
   width: inherit;
+  height: 57px;
+}
+
+.tipo-transacao {
+  display: block;
+  position: absolute;
+  width: inherit;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: #333;
+}
+#tipo-select {
+  position: absolute;
+  width: inherit;
+  background-color: #fff;
+  border: 1px solid #979797;
+  box-sizing: border-box;
+  border-radius: 4px;
+  height: 32px;
+  top: 25px;
+  color: #888888;
+}
+
+.input-mercadoria {
+  width: inherit;
+  height: 56.67px;
+  position: absolute;
+  top: 26.55%;
+  bottom: 53.91%;
+  left: 0%;
+  right: 0%;
+}
+
+.tipo-mercadoria {
+  display: block;
+  width: inherit;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+}
+#tipo_mercadoria {
+  position: absolute;
+  width: inherit;
+  height: 32px;
+  background-color: #fff;
+  border: 1px solid #979797;
+  box-sizing: border-box;
+  border-radius: 4px;
+  top: 24px;
+}
+
+.input-valor {
+  width: inherit;
+  position: absolute;
+  height: 55px;
+  top: 52.99%;
+  bottom: 28.05%;
+  left: 0%;
+  right: 0%;
+}
+
+.input-botao {
+  width: inherit;
+  position: absolute;
+  height: 32px;
+  bottom: 0.78px;
+  left: 0%;
+  right: 0%;
 }
 
 /* Main (abaixo) */

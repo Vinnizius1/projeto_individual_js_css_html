@@ -30,3 +30,9 @@ Início do desenvolvimento do CSS (versão mobile)
 
 ( ) ATIVIDADE 2 – HTML/CSS:
 Desenvolvimento completo do CSS (versão responsiva)
+
+-------
+
+Dúvidas: 
+1. Como colocar "placeholder" para a caixa "select"?
+2. É necessário colocar "position" em tudo que é classe?
