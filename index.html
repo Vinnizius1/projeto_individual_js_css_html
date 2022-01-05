@@ -7,14 +7,20 @@
     <title>ATIVIDADE 1 – HTML/CSS</title>
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="icon" href="./img/logo-colorido@2x.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
     <div class="mobile">
+
       <header class="header">
+
         <!-- menu (acima) -->
         <section>
           <div class="barra-acima">
@@ -63,32 +69,43 @@
       <main>
         <!-- main (acima) -->
         <form class="transacao">
-
           <div class="input-transacao">
-            <label class="tipo-transacao" for="tipo-select">Tipo de transação</label>
+            <label class="tipo-transacao" for="tipo-select"
+              >Tipo de transação</label
+            >
             <select name="tipo-select" id="tipo-select">
               <option value="0">Compra</option>
             </select>
           </div>
 
           <div class="input-mercadoria">
-            <label class="tipo-mercadoria" for="tipo_mercadoria">Nome da mercadoria</label>
+            <label class="tipo-mercadoria" for="tipo_mercadoria"
+              >Nome da mercadoria</label
+            >
             <input type="text" id="tipo_mercadoria" placeholder="Input" />
           </div>
 
           <div class="input-valor">
-            <label class="tipo-valor" for="valor">Valor</label>
-            <input type="number" id="valor" placeholder="Input" />
+            <label class="tipo-valor" for="tipo_valor">Valor</label>
+            <input type="number" id="tipo_valor" placeholder="R$ 0" />
           </div>
 
           <div class="input-botao">
-            <button class="input">Adicionar transação</button>
+            <button class="input_botao">Adicionar transação</button>
           </div>
+          <hr />
         </form>
 
         <!-- main (abaixo) -->
-        <div class="conta">
-          <section>Account statement</section>
+        <div class="account-statement">
+          <section>
+            <h3 class="extrato-transacao">Extrato de transações</h3>
+            <h4 class="extrato-mercadoria">Mercadoria</h4>
+            <h4 class="extrato-valor">Valor</h4>
+            <hr class="hr-main1">
+
+
+          </section>
         </div>
       </main>
 

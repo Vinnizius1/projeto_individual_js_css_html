@@ -99,7 +99,7 @@ body {
   position: absolute;
   width: 34px;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 13px;
   height: 22px;
   left: 5px;
   line-height: 29px;
@@ -179,23 +179,116 @@ body {
   right: 0%;
 }
 
-.input-botao {
+.tipo-valor {
+  display: block;
   width: inherit;
+  font-size: 14px;
+  line-height: 22px;
+  color: #333;
+}
+#tipo_valor {
   position: absolute;
   height: 32px;
-  bottom: 0.78px;
+  left: 0px;
+  right: 0px;
+  top: 24px;
+  width: inherit;
+  background: #fff;
+  border: 1px solid #979797;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.input-botao {
+  position: absolute;
+  width: inherit;
   left: 0%;
   right: 0%;
+  top: 78.85%;
+  bottom: 9.77%;
+}
+
+.input_botao {
+  width: inherit;
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+  background: #333333;
+  border-radius: 4px;
+  color: #fff;
+  line-height: 22px;
+  font-size: 15px;
+  font-family: Inter;
+}
+
+hr {
+  position: absolute;
+  width: 371px;
+  height: 0px;
+  left: 0px;
+  top: 290px;
+  border: 1px solid #979797;
 }
 
 /* Main (abaixo) */
-.conta {
+.account-statement {
   position: absolute;
   width: 371px;
   height: 281px;
   left: 20px;
   top: 420px;
   background-color: rgb(150, 189, 176);
+}
+
+.extrato-transacao {
+  position: absolute;
+  width: 176px;
+  height: 20px;
+  left: 109px;
+  top: 21px;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+  color: #000;
+}
+
+.extrato-mercadoria {
+  position: absolute;
+  width: 72px;
+  height: 22px;
+  left: 30px;
+  top: 60px;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.extrato-valor {
+  position: absolute;
+  width: 33px;
+  height: 22px;
+  left: 296px;
+  top: 60px;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.hr-main1 {
+  position: absolute;
+  width: 371px;
+  height: 0px;
+  left: 0px;
+  top: 82px;
+  border: 1px solid #979797;
 }
 
 /* FOOTER */

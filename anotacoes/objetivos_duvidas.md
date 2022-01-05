@@ -36,3 +36,4 @@ Desenvolvimento completo do CSS (versão responsiva)
 Dúvidas: 
 1. Como colocar "placeholder" para a caixa "select"?
 2. É necessário colocar "position" em tudo que é classe?
+3. Não consegui colocar R$ 0,00 no "placeholder valor" da classe input-valor, em "main (acima)".
