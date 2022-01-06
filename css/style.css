@@ -219,8 +219,8 @@ body {
   border-radius: 4px;
   color: #fff;
   line-height: 22px;
-  font-size: 15px;
-  font-family: Inter;
+  font-size: 14px;
+  font-family: "lato";
 }
 
 hr {
@@ -232,14 +232,16 @@ hr {
   border: 1px solid #979797;
 }
 
-/* Main (abaixo) */
+/* 
+Main (abaixo) 
+*/
 .account-statement {
   position: absolute;
   width: 371px;
   height: 281px;
   left: 20px;
   top: 420px;
-  background-color: rgb(150, 189, 176);
+  background-color: #fff;
 }
 
 .extrato-transacao {
@@ -256,17 +258,26 @@ hr {
   color: #000;
 }
 
+.frame {
+  position: absolute;
+  width: 371px;
+  height: 187px;
+  left: 0px;
+  top: 60px;
+}
+
 .extrato-mercadoria {
   position: absolute;
   width: 72px;
   height: 22px;
   left: 30px;
-  top: 60px;
+  top: 0px;
   font-family: Lato;
   font-style: normal;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 14px;
   line-height: 22px;
+  color: #000;
 }
 
 .extrato-valor {
@@ -274,12 +285,13 @@ hr {
   width: 33px;
   height: 22px;
   left: 296px;
-  top: 60px;
+  top: 0px;
   font-family: Lato;
   font-style: normal;
   font-weight: bold;
   font-size: 14px;
   line-height: 22px;
+  color: #000;
 }
 
 .hr-main1 {
@@ -287,8 +299,217 @@ hr {
   width: 371px;
   height: 0px;
   left: 0px;
-  top: 82px;
+  top: 22px;
   border: 1px solid #979797;
+}
+
+.primeiro-lorem {
+  position: absolute;
+  width: 231px;
+  height: 34px;
+  left: 30px;
+  top: 29px;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.primeiro-sinal {
+  position: absolute;
+  width: 9px;
+  height: 25.35px;
+  left: 10px;
+  top: 29px;
+  color: #000;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.primeiro-valor {
+  position: absolute;
+  width: 98px;
+  height: 41.83px;
+  left: 263px;
+  top: 29px;
+  color: #000;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: right;
+}
+
+.hr-main2 {
+  position: absolute;
+  width: 371px;
+  height: 0px;
+  left: 0px;
+  top: 70.94px;
+  border: 1px solid #979797;
+}
+
+.segundo-lorem {
+  position: absolute;
+  width: 231px;
+  height: 18px;
+  left: 30px;
+  top: 78px;
+  color: #000;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.segundo-sinal {
+  position: absolute;
+  width: 9px;
+  height: 25.35px;
+  left: 10px;
+  top: 78px;
+  color: #000;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+}
+
+.segundo-valor {
+  position: absolute;
+  width: 98px;
+  height: 18px;
+  left: 263px;
+  top: 78px;
+  color: #000;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: right;
+}
+
+.hr-main3 {
+  position: absolute;
+  width: 371px;
+  height: 0px;
+  left: 0px;
+  top: 104px;
+  border: 1px solid #979797;
+}
+
+.terceiro-lorem {
+  position: absolute;
+  width: 231px;
+  height: 18px;
+  left: 30px;
+  top: 111px;
+  color: #000;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.terceiro-sinal {
+  position: absolute;
+  width: 9px;
+  height: 25.35px;
+  left: 10px;
+  top: 111px;
+  color: #000;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.terceiro-valor {
+  position: absolute;
+  width: 98px;
+  height: 18px;
+  left: 263px;
+  top: 111px;
+  color: #000;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: right;
+}
+
+.hr-main4 {
+  position: absolute;
+  width: 371px;
+  height: 0px;
+  left: 0px;
+  top: 137px;
+  border: 0.9px solid #979797;
+}
+
+.hr-main5 {
+  position: absolute;
+  width: 371px;
+  height: 0px;
+  left: 0px;
+  top: 140px;
+  border: 0.9px solid #979797;
+}
+
+.total {
+  position: absolute;
+  width: 72px;
+  height: 18px;
+  left: 30px;
+  top: 151px;
+  color: #000;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.total-valor {
+  position: absolute;
+  width: 98px;
+  height: 18px;
+  left: 263px;
+  top: 151px;
+  color: #000;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: right;
+}
+
+.lucro {
+  position: absolute;
+  width: 98px;
+  height: 18px;
+  left: 263px;
+  top: 169px;
+  color: #000;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 22px;
+  text-align: right;
 }
 
 /* FOOTER */

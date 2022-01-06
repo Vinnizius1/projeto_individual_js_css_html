@@ -37,3 +37,14 @@ Dúvidas:
 1. Como colocar "placeholder" para a caixa "select"?
 2. É necessário colocar "position" em tudo que é classe?
 3. Não consegui colocar R$ 0,00 no "placeholder valor" da classe input-valor, em "main (acima)".
+
+-------
+
+Aprendizados:
+1. Position
+    From W3C -> "In the absolute positioning model, a box is explicitly offset with respect to (concerning) its containing block."
+    Ou melhor -> "No modelo de posicionamento absoluto, uma caixa é explicitamente deslocada em relação ao bloco que a contém."
+
+    "If the element has 'position: absolute', the containing block is established by the nearest ancestor with a position OTHER THAN STATIC."
+    
+    ---> so your absolute element will always be relative to the ancestor's position unless it is a static positioned element.
