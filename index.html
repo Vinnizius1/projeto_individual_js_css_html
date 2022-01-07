@@ -7,68 +7,50 @@
     <title>ATIVIDADE 1 – HTML/CSS</title>
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="icon" href="./img/logo-colorido@2x.png" />
-    <!--Google Fonts-->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    
   <body>
     <div class="mobile">
 
-      <header class="header">
+      <!-- Status Bar -->
+      <header class="status-bar">
 
-        <!-- menu (acima) -->
-        <section>
-          <div class="barra-acima">
-            <div>
-              <img
-                class="frame6"
-                src="img/Frame 6.png"
-                alt="ícone de sinal da conexão"
-              />
-            </div>
-            <div>
-              <img
-                class="horas"
-                src="img/9_42 AM.png"
-                alt="indicador de horas"
-              />
-            </div>
-            <div>
-              <img
-                class="frame8"
-                src="img/Frame 8.png"
-                alt="sinal de bateria e bluetooth"
-              />
-            </div>
-          </div>
-        </section>
+        <div class="frame-6">
+          <img src="img/bolinhas-menu_superior.png" alt="bolinhas do sinal" class="bolinhas">
+          <img src="img/sinal-menu_superior.png" alt="sinal" class="sinal">
+        </div>
 
-        <!-- menu (abaixo) -->
-        <section>
-          <div class="barra-abaixo">
-            <div>
-              <img class="logo" src="img/Ellipse 13.png" alt="ícones da logo" />
-            </div>
-            <h2 class="titulo">Controle Financeiro</h2>
-            <div>
-              <img
-                class="hamburguer"
-                src="img/menu-hamburguer.png"
-                alt="menu hamburguer"
-              />
-            </div>
-          </div>
-        </section>
+        <p class="horas">9:42 AM</p>
+
+        <div class="frame-8">
+          <img src="img/vector-3_tamanho4.png" alt="bluetooth" class="bluetooth">
+           <p class="porcentagem">42%</p>
+           <img src="img/bateria-menu_superior.png" alt="bateria" class="bateria">
+        </div>
       </header>
 
-      <main>
-        <!-- main (acima) -->
-        <form class="transacao">
+      <!-- Header -->   
+        <header class="header">
+
+          <div> 
+            <img src="img/logo-menu_inferior.png" alt="logo" class="logo">           
+          </div>
+
+          <h2 class="titulo">Controle Financeiro</h2>
+
+          <div class="hamburguer">
+            <img src="img/hamburguer-menu_inferior.png" alt="menu hamburguer" class="hamburguer-imagem">
+            <!-- NAVIGATION -->
+            <div class="navigation"></div>    
+          </div>
+        </header>
+
+        <!-- Main (acima) -->
+        <form class="form-transacao">
+
           <div class="input-transacao">
             <label class="tipo-transacao" for="tipo-select"
               >Tipo de transação</label
@@ -94,35 +76,34 @@
             <button class="input_botao">Adicionar transação</button>
           </div>
           <hr />
-        </form>
+         </form>
 
-        <!-- main (abaixo) -->
+        <!-- Main (abaixo) -->
         <div class="account-statement">
-            <h3 class="extrato-transacao">Extrato de transações</h3>
 
-            <div class="frame">
-              <h4 class="extrato-mercadoria">Mercadoria</h4>
-              <h4 class="extrato-valor">Valor</h4>
-              <hr class="hr-main1">
-              <p class="primeiro-lorem">Lorem ipsum dolor sit amet consectetur</p>
-              <p class="primeiro-sinal">+</p>
-              <p class="primeiro-valor">R$ 12.999,99</p>
-              <hr class="hr-main2">
-              <p class="segundo-lorem">Quis nostrud exercitation</p>
-              <p class="segundo-sinal">-</p>
-              <p class="segundo-valor">R$ 99,99</p>
-              <hr class="hr-main3">
-              <p class="terceiro-lorem">Lorem ipsum</p>
-              <p class="terceiro-sinal">+</p>
-              <p class="terceiro-valor">R$ 9,99</p>
-              <hr class="hr-main4">
-              <hr class="hr-main5">
-              <p class="total">Total</p>
-              <p class="total-valor">R$ 12.909,99</p>
-              <p class="lucro">[LUCRO]</p>
+          <h3 class="extrato-transacao">Extrato de transações</h3>
+          <div class="frame">
+            <h4 class="extrato-mercadoria">Mercadoria</h4>
+            <h4 class="extrato-valor">Valor</h4>
+            <hr class="hr-main1" />
+            <p class="primeiro-lorem">Lorem ipsum dolor sit amet consectetur</p>
+            <p class="primeiro-sinal">+</p>
+            <p class="primeiro-valor">R$ 12.999,99</p>
+            <hr class="hr-main2" />
+            <p class="segundo-lorem">Quis nostrud exercitation</p>
+            <p class="segundo-sinal">-</p>
+            <p class="segundo-valor">R$ 99,99</p>
+            <hr class="hr-main3" />
+            <p class="terceiro-lorem">Lorem ipsum</p>
+            <p class="terceiro-sinal">+</p>
+            <p class="terceiro-valor">R$ 9,99</p>
+            <hr class="hr-main4" />
+            <hr class="hr-main5" />
+            <p class="total">Total</p>
+            <p class="total-valor">R$ 12.909,99</p>
+            <p class="lucro">[LUCRO]</p>
           </div>
         </div>
-      </main>
 
       <!-- footer sem nenhuma informação -->
       <footer></footer>

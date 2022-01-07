@@ -6,6 +6,7 @@
 
 body {
   display: flex;
+  font-family: "Inter", sans-serif;
   font-family: "Lato", sans-serif;
   font-size: 100%;
   justify-content: center;
@@ -23,77 +24,162 @@ body {
   background-color: #fff;
 }
 
-/* HEADER */
-.header {
+/*
+NAVIGATION
+*/
+.navigation {
   position: absolute;
-  display: flex;
-  flex-direction: column;
-  width: 411px;
-  height: 84px;
-  left: 0px;
-  top: 0px;
+  width: 0px;
+  height: 707px;
+  right: -18px;
+  top: -18px;
+  background: #333333;
+  z-index: 1;
+  transition: ease 1s;
 }
 
-/* Menu (acima) */
-.barra-acima {
+/* 
+Status Bar
+*/
+.status-bar {
   position: absolute;
+  width: inherit;
   background-color: #000;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
   height: 24px;
   left: 0px;
   right: 0px;
   top: 0px;
 }
 
-.frame6 {
-  margin-left: 2.64px;
-  margin-top: 4px;
+.frame-8 {
+  position: absolute;
+  width: 88px;
+  height: 18px;
+  right: 2.36px;
+  top: 2px;
+}
+.bluetooth {
+  position: absolute;
+  width: 5px;
+  height: 10px;
+  left: 19.86px;
+  top: 4.5px;
+}
+.porcentagem {
+  position: absolute;
+  width: 25px;
+  height: 15px;
+  left: 29.86px;
+  top: 2.5px;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+}
+.bateria {
+  position: absolute;
+  width: 24.5px;
+  height: 10px;
+  left: 59.86px;
+  top: 4.5px;
 }
 
-.frame8 {
-  margin-right: 2.36px;
-  margin-top: 2px;
+.frame6 {
+  position: absolute;
+  width: 120px;
+  height: 16px;
+  left: 2.64px;
+  top: 4px;
+}
+.bolinhas {
+  position: absolute;
+  width: 33.5px;
+  height: 5.5px;
+  left: 6px;
+  top: 9px;
+}
+.sinal {
+  position: absolute;
+  width: 12px;
+  height: 9px;
+  left: 48px;
+  top: 7px;
 }
 
 .horas {
-  margin-left: calc(50% - 50px / 2 + 1px);
-  margin-top: 4.5px;
+  position: absolute;
+  width: 50px;
+  height: 15px;
+  left: calc(50% - 50px / 2 + 1px);
+  top: 4.5px;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
 }
 
-/* Menu (abaixo) */
-.barra-abaixo {
+/* 
+HEADER 
+*/
+.header {
   position: absolute;
   width: 411px;
   height: 60px;
   left: 0px;
   top: 24px;
-  background-color: #e0e0e0;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  background: #e0e0e0;
 }
 
 .titulo {
-  font-weight: 700;
+  position: absolute;
+  width: 411px;
+  height: 43px;
+  top: 9px;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 600;
   font-size: 20px;
-  color: #333;
+  line-height: 36px;
+  align-items: center;
+  text-align: center;
+  color: #333333;
 }
 
 .logo {
-  margin-top: auto;
-  margin-left: 22px;
+  position: absolute;
+  width: 30px;
+  height: 27.63px;
+  left: 22px;
+  top: 15px;
 }
 
 .hamburguer {
-  margin-right: 18px;
-  margin-top: auto;
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  left: 369px;
+  top: 18px;
+}
+.hamburguer-imagem {
+  position: initial;
+  width: 23px;
+  height: 22px;
+  top: 5px;
+  background: #e0e0e0;
+  cursor: pointer;
 }
 
-/* MAIN */
+/* 
+MAIN 
+*/
 /* Main (acima) */
 ::-webkit-input-placeholder {
   position: absolute;
@@ -106,7 +192,7 @@ body {
   color: #888;
 }
 
-.transacao {
+.form-transacao {
   position: absolute;
   width: 371px;
   height: 290px;
@@ -220,7 +306,7 @@ body {
   color: #fff;
   line-height: 22px;
   font-size: 14px;
-  font-family: "lato";
+  font-family: "inter";
 }
 
 hr {
@@ -512,7 +598,17 @@ Main (abaixo)
   text-align: right;
 }
 
-/* FOOTER */
+/*
+NAVIGATION
+*/
+.hamburguer:hover .navigation {
+  display: block;
+  width: 351px;
+}
+
+/* 
+FOOTER 
+*/
 footer {
   position: absolute;
   background-color: #333;

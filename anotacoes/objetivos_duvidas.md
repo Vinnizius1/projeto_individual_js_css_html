@@ -36,7 +36,8 @@ Desenvolvimento completo do CSS (versão responsiva)
 Dúvidas: 
 1. Como colocar "placeholder" para a caixa "select"?
 2. É necessário colocar "position" em tudo que é classe?
-3. Não consegui colocar R$ 0,00 no "placeholder valor" da classe input-valor, em "main (acima)".
+3. Não consegui colocar R$ 0,00 no "placeholder valor" da classe input-valor, em "main (acima)". Como editar esses "placeholder"?
+4. O sinal do "bluetooth" ficou ruim de TODO JEITO. Tentei usar "fontawesome" etc e nada.
 
 -------
 
@@ -48,3 +49,16 @@ Aprendizados:
     "If the element has 'position: absolute', the containing block is established by the nearest ancestor with a position OTHER THAN STATIC."
     
     ---> so your absolute element will always be relative to the ancestor's position unless it is a static positioned element.
+
+2. Header (tag)
+    From W3C -> The <header> element represents a container for introductory content or a set of navigational links.
+    A <header> element typically contains:
+        - one or more heading elements (<h1> - <h6>);
+        - logo or icon;
+        - authorship information.
+    Note: You can have several <header> elements in one HTML document. However, <header> cannot be placed within a <footer>, <address> or another <header> element.
+
+--------
+
+Consertar:
+1. HTML -> organizar as 5 div´s principais dentro da div mobile. Consertá-las também.
