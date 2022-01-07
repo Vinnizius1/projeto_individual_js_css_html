@@ -41,7 +41,7 @@ Dúvidas:
 
 -------
 
-Aprendizados:
+Aprendizados:  
 1. Position
     From W3C -> "In the absolute positioning model, a box is explicitly offset with respect to (concerning) its containing block."
     Ou melhor -> "No modelo de posicionamento absoluto, uma caixa é explicitamente deslocada em relação ao bloco que a contém."
@@ -50,15 +50,15 @@ Aprendizados:
     
     ---> so your absolute element will always be relative to the ancestor's position unless it is a static positioned element.
 
-2. Header (tag)
+2. Header (tag)  
     From W3C -> The <header> element represents a container for introductory content or a set of navigational links.
-    A <header> element typically contains:
-        - one or more heading elements (<h1> - <h6>);
-        - logo or icon;
-        - authorship information.
+    A <header> element typically contains:  
+        ---> one or more heading elements (<h1> - <h6>);
+        ---> logo or icon;
+        ---> authorship information.
     Note: You can have several <header> elements in one HTML document. However, <header> cannot be placed within a <footer>, <address> or another <header> element.
 
 --------
 
 Consertar:
-1. HTML -> organizar as 5 div´s principais dentro da div mobile. Consertá-las também.
+1. HTML -> organizar as 5 div´s principais dentro da div mobile. Consertá-las também. (FEITO!)
