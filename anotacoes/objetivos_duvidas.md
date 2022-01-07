@@ -60,6 +60,9 @@ Aprendizados:
 
     Note: You can have several 'header' elements in one HTML document. However, 'header' cannot be placed within a 'footer', 'address' or another 'header' element.
 
+3. O efeito "transition" NÃO funciona com a propriedade "display: none" etc. Pra funcionar, utilizei a propriedade "opacity".
+MAS, na vdd, tem isso aqui: https://www.ti-enxame.com/pt/css/transicoes-no-display-propriedade/969553813/ 
+
 --------
 
 Consertar:

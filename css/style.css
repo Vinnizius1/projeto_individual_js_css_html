@@ -29,13 +29,55 @@ NAVIGATION
 */
 .navigation {
   position: absolute;
-  width: 0px;
+  width: 371px;
   height: 707px;
   right: -18px;
   top: -18px;
   background: #333333;
+  transition: ease 0.3s;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s linear;
   z-index: 1;
-  transition: ease 1s;
+}
+.cadastro-transacoes {
+  position: absolute;
+  width: 165px;
+  right: 20px;
+  top: 62px;
+  text-decoration: none;
+  cursor: pointer;
+  color: #fff;
+  font-family: Lato;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.limpar-dados {
+  position: absolute;
+  width: 95px;
+  right: 20px;
+  top: 101px;
+  font-family: Lato;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+.vector-x {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  left: 20px;
+  top: 20px;
+  cursor: pointer;
 }
 
 /* 
@@ -599,11 +641,11 @@ Main (abaixo)
 }
 
 /*
-NAVIGATION
+NAVIGATION - HAMBURGUER HOVER -
 */
 .hamburguer:hover .navigation {
-  display: block;
-  width: 351px;
+  visibility: visible;
+  opacity: 1;
 }
 
 /* 
