@@ -2,29 +2,9 @@ https://www.figma.com/file/U8ojEXx2vxSK2KOvoBvHVH8y/Frontend-test?node-id=13%3A4
 
 1. Criar uma SPA (Single Page Application) seguindo o layout proposto.
 
-2. Alterar o link “Resumo” para “Cadastro de transações”, Alterar o link “Dashboard” para “Limpar dados”, Excluir o link “Configurações”.
+Divisão de atividades:  
 
-3. O que sua aplicação deverá fazer:
-( ) Incluir transações de compra ou venda de mercadoria.
-( ) Criar um extrato das transações incluídas. As transações deverão ser mostradas na ordem em que foram incluídas.
-( ) Mostrar o saldo final e destacar se houve lucro ou prejuízo.
-( ) A aplicação deverá ser responsiva e estar de acordo com o layout fornecido.
-( ) Persistir as transações no Local Storage.
-
-4. Outros requisitos
-( ) HTML: 
-As opções do campo “Tipo de transação” são: Compra e Venda.
-Caso não exista nenhuma transação cadastrada, adicione a mensagem “Nenhuma transação cadastrada.” na lista do Extrato.
-
-( ) CSS:
-Testar em smartphones, tablets (modos portrait e landscape) e monitores a partir de 1024px até 1900px. (Através do inspecionar elemento no navegador)
-A fonte utilizada é a Lato.
-A largura máxima do conteúdo é 1100px.
-
-5. Divisão de atividades
-( ) HTML e CSS:
-
-( ) ATIVIDADE 1 – HTML/CSS:
+(X) ATIVIDADE 1 – HTML/CSS:
 Desenvolvimento completo do HTML
 Início do desenvolvimento do CSS (versão mobile)
 
@@ -35,11 +15,11 @@ Desenvolvimento completo do CSS (versão responsiva)
 
 Dúvidas: 
 1. Como colocar "placeholder" para a caixa "select"?
-2. É necessário colocar "position" em tudo que é classe?
-3. Não consegui colocar R$ 0,00 no "placeholder valor" da classe input-valor, em "main (acima)". Como editar esses "placeholder"?
+2. A importância/necessidade/efeitos do "position" em todas as classes, qual é?
+3. Qual a melhor forma de editar o "placeholder"?
 4. O sinal do "bluetooth" ficou ruim de TODO JEITO. Tentei usar "fontawesome" etc e nada. POR FIM, consegui baixar uma imagem de 256 x 256
-que acabou ficando melhor do que a do Figma (26 x 52). Este site é top pra redimensionar imagens:  
-https://squoosh.app/
+que acabou ficando melhor do que a do Figma (26 x 52).  
+A propósito, este site é top pra redimensionar imagens: https://squoosh.app/
 
 -------
 
@@ -68,4 +48,4 @@ MAS, na vdd, tem isso aqui: https://www.ti-enxame.com/pt/css/transicoes-no-displ
 --------
 
 Consertar:
-1. HTML -> organizar as 5 div´s principais dentro da div mobile. Consertá-las também. (FEITO!)
+(X) Organizar as 5 div´s principais dentro da div mobile. Consertá-las.

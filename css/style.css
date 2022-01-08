@@ -233,8 +233,8 @@ MAIN
 /* Main (acima) */
 ::-webkit-input-placeholder {
   position: absolute;
-  width: 34px;
-  font-weight: 400;
+  width: inherit;
+  font-weight: normal;
   font-size: 13px;
   height: 22px;
   left: 5px;
