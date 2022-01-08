@@ -37,7 +37,9 @@ Dúvidas:
 1. Como colocar "placeholder" para a caixa "select"?
 2. É necessário colocar "position" em tudo que é classe?
 3. Não consegui colocar R$ 0,00 no "placeholder valor" da classe input-valor, em "main (acima)". Como editar esses "placeholder"?
-4. O sinal do "bluetooth" ficou ruim de TODO JEITO. Tentei usar "fontawesome" etc e nada.
+4. O sinal do "bluetooth" ficou ruim de TODO JEITO. Tentei usar "fontawesome" etc e nada. POR FIM, consegui baixar uma imagem de 256 x 256
+que acabou ficando melhor do que a do Figma (26 x 52). Este site é top pra redimensionar imagens:  
+https://squoosh.app/
 
 -------
 

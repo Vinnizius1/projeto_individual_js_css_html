@@ -80,6 +80,14 @@ NAVIGATION
   cursor: pointer;
 }
 
+/*
+NAVIGATION - HAMBURGUER HOVER EFFECT -
+*/
+.hamburguer:hover .navigation {
+  visibility: visible;
+  opacity: 1;
+}
+
 /* 
 Status Bar
 */
@@ -102,10 +110,10 @@ Status Bar
 }
 .bluetooth {
   position: absolute;
-  width: 5px;
-  height: 10px;
-  left: 19.86px;
-  top: 4.5px;
+  width: 23px;
+  height: 26px;
+  left: 11.86px;
+  top: -3.5px;
 }
 .porcentagem {
   position: absolute;
@@ -638,14 +646,6 @@ Main (abaixo)
   font-size: 10px;
   line-height: 22px;
   text-align: right;
-}
-
-/*
-NAVIGATION - HAMBURGUER HOVER -
-*/
-.hamburguer:hover .navigation {
-  visibility: visible;
-  opacity: 1;
 }
 
 /* 
