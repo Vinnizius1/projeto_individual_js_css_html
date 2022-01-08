@@ -1,3 +1,5 @@
+> Objetivo:  
+
 https://www.figma.com/file/U8ojEXx2vxSK2KOvoBvHVH8y/Frontend-test?node-id=13%3A42
 
 1. Criar uma SPA (Single Page Application) seguindo o layout proposto.
@@ -13,7 +15,7 @@ Desenvolvimento completo do CSS (versão responsiva)
 
 -------
 
-Dúvidas: 
+> Dúvidas: 
 1. Como colocar "placeholder" para a caixa "select"?
 2. A importância/necessidade/efeitos do "position" em todas as classes, qual é?
 3. Qual a melhor forma de editar o "placeholder"?
@@ -23,13 +25,13 @@ A propósito, este site é top pra redimensionar imagens: https://squoosh.app/
 
 -------
 
-Aprendizados:  
+> Aprendizados:  
 1. Position From W3C -> In the absolute positioning model, a box is explicitly offset with respect to (concerning) its containing block.
     Ou melhor -> "No modelo de posicionamento absoluto, uma caixa é explicitamente deslocada em relação ao bloco que a contém."
 
-    "If the element has 'position: absolute', the containing block is established by the nearest ancestor with a position OTHER THAN STATIC."
-    
-    ---> so your absolute element will always be relative to the ancestor's position unless it is a static positioned element.
+    "If the element has 'position: absolute', the containing block is established by the nearest ancestor with a position OTHER THAN STATIC."  
+
+        ---> so your absolute element will always be relative to the ancestor's position unless it is a static positioned element.  
 
 2. Header (tag) From W3C -> The 'header' element represents a container for introductory content or a set of navigational links.
     A 'header' element typically contains:  
@@ -47,5 +49,5 @@ MAS, na vdd, tem isso aqui: https://www.ti-enxame.com/pt/css/transicoes-no-displ
 
 --------
 
-Consertar:
-(X) Organizar as 5 div´s principais dentro da div mobile. Consertá-las.
+> Consertar:
+(X) Organizar as 5 div´s principais dentro da div mobile.
