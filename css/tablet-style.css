@@ -1,0 +1,108 @@
+/* tablet portrait */
+@media screen and (min-width: 768px) {
+  /* Mobile */
+  .mobile {
+    width: 768px;
+    height: 1024px;
+  }
+
+  /* 
+  Navigation 
+  */
+  .navigation {
+    width: 252px;
+    height: 1000px;
+    right: -18px;
+    top: -18px;
+    background: #333333;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+    z-index: 1;
+  }
+  .cadastro-transacoes {
+    width: 168px;
+    height: 32px;
+    right: 20px;
+  }
+  .limpar-dados {
+    width: 97px;
+    height: 32px;
+  }
+
+  .hamburguer:hover .navigation {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  /* 
+  Header 
+  */
+  .hamburguer {
+    left: 726px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  }
+  .hamburguer-imagem {
+    background-color: inherit;
+  }
+
+  /*
+  Main (acima)
+  */
+  .form-transacao {
+    width: 728px;
+    height: 189px;
+    left: 20px;
+    top: 104px;
+    z-index: 0;
+  }
+
+  .retangulo-tablet {
+    position: absolute;
+    width: 728px;
+    height: 189px;
+    left: calc(50% - 728px / 2);
+    top: calc(50% - 189px / 2);
+    background: #ffffff;
+    border: 1px solid #979797;
+    box-sizing: border-box;
+    border-radius: 4px;
+  }
+  
+  hr {
+    display: none;
+  }
+
+  .input-transacao {
+    width: 150px;
+    left: 2.75%;
+    right: 76.65%;
+    top: 32.28%;
+    bottom: 37.57%;
+  }
+
+  .input-mercadoria {
+    width: 348px;
+    left: 26.1%;
+    right: 26.1%;
+    top: 32.28%;
+    bottom: 37.57%;
+  }
+
+  .input-valor {
+    width: 150px;
+    left: 76.65%;
+    right: 2.75%;
+    top: 32.28%;
+    bottom: 38.62%;
+  }
+
+  .input-botao {
+    height: 32px;
+    width: 200px;
+    right: 20px;
+    left: 508px;
+    bottom: 20.22px;
+    border-radius: 0px;
+  }
+}

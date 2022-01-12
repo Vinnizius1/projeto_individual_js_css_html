@@ -1,3 +1,5 @@
+@import "tablet-style.css";
+
 * {
   margin: 0;
   padding: 0;
@@ -34,7 +36,6 @@ NAVIGATION
   right: -18px;
   top: -18px;
   background: #333333;
-  transition: ease 0.3s;
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s, opacity 0.5s linear;
@@ -181,7 +182,7 @@ HEADER
 */
 .header {
   position: absolute;
-  width: 411px;
+  width: inherit;
   height: 60px;
   left: 0px;
   top: 24px;
@@ -192,7 +193,8 @@ HEADER
   position: absolute;
   width: 411px;
   height: 43px;
-  top: 9px;
+  left: calc(50% - 411px / 2 - 0.5px);
+  top: calc(50% - 43px / 2 + 0.5px);
   font-family: Lato;
   font-style: normal;
   font-weight: 600;
@@ -217,6 +219,7 @@ HEADER
   height: 24px;
   left: 369px;
   top: 18px;
+  z-index: 1;
 }
 .hamburguer-imagem {
   position: initial;
@@ -252,8 +255,9 @@ MAIN
 }
 
 .input-transacao {
-  width: inherit;
+  width: 371px;
   height: 57px;
+  position: absolute;
 }
 
 .tipo-transacao {
@@ -278,7 +282,7 @@ MAIN
 }
 
 .input-mercadoria {
-  width: inherit;
+  width: 371px;
   height: 56.67px;
   position: absolute;
   top: 26.55%;
@@ -306,7 +310,7 @@ MAIN
 }
 
 .input-valor {
-  width: inherit;
+  width: 371px;
   position: absolute;
   height: 55px;
   top: 52.99%;
@@ -337,7 +341,7 @@ MAIN
 
 .input-botao {
   position: absolute;
-  width: inherit;
+  width: 371px;
   left: 0%;
   right: 0%;
   top: 78.85%;
