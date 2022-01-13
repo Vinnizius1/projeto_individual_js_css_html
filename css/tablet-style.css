@@ -12,13 +12,6 @@
   .navigation {
     width: 252px;
     height: 1000px;
-    right: -18px;
-    top: -18px;
-    background: #333333;
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s, opacity 0.5s linear;
-    z-index: 1;
   }
   .cadastro-transacoes {
     width: 168px;
@@ -28,11 +21,6 @@
   .limpar-dados {
     width: 97px;
     height: 32px;
-  }
-
-  .hamburguer:hover .navigation {
-    visibility: visible;
-    opacity: 1;
   }
 
   /* 
@@ -54,7 +42,6 @@
     height: 189px;
     left: 20px;
     top: 104px;
-    z-index: 0;
   }
 
   .retangulo-tablet {
@@ -68,8 +55,24 @@
     box-sizing: border-box;
     border-radius: 4px;
   }
-  
-  hr {
+
+  .nova-transacao {
+    position: absolute;
+    width: 174px;
+    height: 20px;
+    left: calc(50% - 174px / 2);
+    top: calc(50% - 20px / 2 - 64.5px);
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    /* or 122% */
+    text-align: center;
+    color: #000000;
+  }
+
+  #hr {
     display: none;
   }
 
@@ -100,9 +103,90 @@
   .input-botao {
     height: 32px;
     width: 200px;
-    right: 20px;
-    left: 508px;
-    bottom: 20.22px;
-    border-radius: 0px;
+    left: 69.78%;
+    right: 2.75%;
+    top: 71.96%;
+    bottom: 10.58%;
+  }
+  .input_botao {
+    top: 0.78px;
+    height: 32px;
+    border-radius: 4px;
+  }
+
+  /*
+  Main (abaixo)
+  */
+  .account-statement {
+    width: 728px;
+    top: 316px;
+  }
+  .extrato-transacao {
+    width: 176px;
+    left: 277px;
+  }
+  .frame {
+    width: 728px;
+  }
+  .extrato-mercadoria {
+    left: 40px;
+  }
+  .extrato-valor {
+    left: 675px;
+  }
+  .hr-main1 {
+    width: 728px;
+  }
+  .primeiro-lorem {
+    left: 40px;
+  }
+  .primeiro-sinal {
+    left: 20px;
+  }
+  .primeiro-valor {
+    left: 610px;
+  }
+  .hr-main2 {
+    width: 728px;
+  }
+  .segundo-lorem {
+    left: 40px;
+  }
+  .segundo-sinal {
+    left: 20px;
+  }
+  .segundo-valor {
+    left: 610px;
+  }
+  .hr-main3 {
+    width: 728px;
+  }
+  .terceiro-lorem {
+    left: 40px;
+  }
+  .terceiro-sinal {
+    left: 20px;
+  }
+  .terceiro-valor {
+    left: 610px;
+  }
+  .hr-main4,
+  .hr-main5 {
+    width: 728px;
+  }
+  .total {
+    left: 40px;
+  }
+  .total-valor {
+    left: 610px;
+  }
+  .lucro {
+    left: 610px;
+  }
+  /* 
+FOOTER 
+*/
+  footer {
+    top: 1016px;
   }
 }
