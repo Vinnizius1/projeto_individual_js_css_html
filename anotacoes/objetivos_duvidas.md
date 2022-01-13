@@ -47,7 +47,20 @@ A propósito, este site é top pra redimensionar imagens: https://squoosh.app/
 3. O efeito "transition" NÃO funciona com a propriedade "display: none" etc. Pra funcionar, utilizei a propriedade "opacity".
 MAS, na vdd, tem isso aqui: https://www.ti-enxame.com/pt/css/transicoes-no-display-propriedade/969553813/ 
 
+4. What is the difference between visibility:hidden and display:none?  
+Answer:  
+
+        ---> display:none means that the tag in question will not appear on the page at all (although you can still interact with it through the dom). There will be no space allocated for it between the other tags.
+
+        ---> visibility:hidden means that unlike display:none, the tag is not visible, but space is allocated for it on the page. The tag is rendered, it just isn't seen on the page.   
+
 --------
 
 > Consertar:
 (X) Organizar as 5 div´s principais dentro da div mobile.
+
+--------
+
+> Problema(s):  
+1. O "hover" sobre o ícone "hamburguer" traz o problema de atrapalhar algumas organizações de posicionamento de acordo com o layout do Figma, pois a classe "hamburguer" precisa ser pai da classe "navigation" para que o menu hover fique legal e funcionando bem.  
+Há solução pra isso?

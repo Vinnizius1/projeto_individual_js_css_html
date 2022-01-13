@@ -1,4 +1,5 @@
 @import "tablet-style.css";
+@import "tablet_landscape-style.css";
 
 * {
   margin: 0;
@@ -243,6 +244,10 @@ MAIN
   left: 5px;
   line-height: 29px;
   color: #888;
+}
+
+.nova-transacao {
+  display: none;
 }
 
 .form-transacao {
