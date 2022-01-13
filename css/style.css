@@ -1,5 +1,6 @@
 @import "tablet-style.css";
 @import "tablet_landscape-style.css";
+@import "desktop-style.css";
 
 * {
   margin: 0;

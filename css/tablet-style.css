@@ -128,61 +128,34 @@
     width: 176px;
     left: 277px;
   }
-  .frame {
+  .frame,
+  .hr-main1,
+  .hr-main2,
+  .hr-main3,
+  .hr-main4,
+  .hr-main5 {
     width: 728px;
   }
-  .extrato-mercadoria {
+  .extrato-mercadoria,
+  .primeiro-lorem,
+  .segundo-lorem,
+  .terceiro-lorem,
+  .total {
     left: 40px;
   }
   .extrato-valor {
     left: 675px;
   }
-  .hr-main1 {
-    width: 728px;
-  }
-  .primeiro-lorem {
-    left: 40px;
-  }
-  .primeiro-sinal {
-    left: 20px;
-  }
-  .primeiro-valor {
-    left: 610px;
-  }
-  .hr-main2 {
-    width: 728px;
-  }
-  .segundo-lorem {
-    left: 40px;
-  }
-  .segundo-sinal {
-    left: 20px;
-  }
-  .segundo-valor {
-    left: 610px;
-  }
-  .hr-main3 {
-    width: 728px;
-  }
-  .terceiro-lorem {
-    left: 40px;
-  }
+
+  .primeiro-sinal,
+  .segundo-sinal,
   .terceiro-sinal {
     left: 20px;
   }
-  .terceiro-valor {
-    left: 610px;
-  }
-  .hr-main4,
-  .hr-main5 {
-    width: 728px;
-  }
-  .total {
-    left: 40px;
-  }
-  .total-valor {
-    left: 610px;
-  }
+  .primeiro-valor,
+  .segundo-valor,
+  .terceiro-valor,
+  .total-valor,
   .lucro {
     left: 610px;
   }
