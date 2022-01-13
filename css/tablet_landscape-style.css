@@ -60,18 +60,20 @@ NAVIGATION
 
   .cadastro-transacoes {
     color: #333;
-    width: 165px;
+    width: 167px;
     height: 32px;
     left: 25px;
     top: 4px;
+    font-weight: 600;
   }
 
   .limpar-dados {
     color: #333;
-    width: 95px;
+    width: 97px;
     height: 32px;
     left: 229px;
     top: 4px;
+    font-weight: 600;
   }
 
   /* 
@@ -146,33 +148,51 @@ Main (abaixo)
     left: 239px;
   }
 
-  .frame {
+  .frame,
+  .hr-main1 {
     width: 652px;
   }
 
-  .extrato-mercadoria {
-      left: 40px;
+  .extrato-mercadoria,
+  .primeiro-lorem,
+  .segundo-lorem,
+  .terceiro-lorem,
+  .total {
+    left: 40px;
   }
 
   .extrato-valor {
-      left: 599px;
+    left: 599px;
   }
 
-  .hr-main1 {
-      width: 652px;
+  .primeiro-sinal,
+  .segundo-sinal,
+  .terceiro-sinal {
+    left: 20px;
   }
 
-  .primeiro-lorem {
-      left: 40px;
+  .primeiro-valor,
+  .segundo-valor,
+  .terceiro-valor {
+    left: 534px;
   }
 
-  .primeiro-sinal {
-      left: 20px;
+  .hr-main2,
+  .hr-main3,
+  .hr-main4,
+  .hr-main5 {
+    width: 652px;
   }
 
-  .primeiro-valor {
-      left: 534px;
+  .total-valor,
+  .lucro {
+    left: 534px;
   }
 
-  
+  /* 
+FOOTER 
+*/
+  footer {
+    top: 826px;
+  }
 }
