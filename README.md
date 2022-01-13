@@ -3,7 +3,7 @@
 
 Esta é a Atividade "1" de "2":      
 
-![](assets/img-Readme.md/smartphone%20with%20navigation%20active.png)  
-![](assets/img-Readme.md/smartphone.png)  
+![](assets/img-Readme.md/smartphone-300px.jpg)  
+![](assets/img-Readme.md/smartphone_with_navigation-300px.jpg)  
 
 ### Bóra evoluir! 🚀:books: :raised_hands:
