@@ -1,8 +1,8 @@
 ### Projeto individual do módulo *"HTML e CSS"*   
-:man_technologist: Objetivo > construir uma SPA (Single Page Application) seguindo o layout proposto.  
+:man_technologist: Objetivo > construir uma SPA (Single Page Application) seguindo o layout proposto no Figma:  
 
-Esta é a Atividade "1" de "2":      
-
+https://www.figma.com/file/U8ojEXx2vxSK2KOvoBvHVH8y/Frontend-test?node-id=13%3A42  
+    
 ![](assets/img-Readme.md/mobile_navigation.png)  
 
 ### Bóra evoluir! 🚀:books: :raised_hands:
