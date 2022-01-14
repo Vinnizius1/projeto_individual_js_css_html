@@ -6,7 +6,7 @@
   */
   .mobile {
     width: 768px;
-    height: 1024px;
+    height: 100vh;
   }
 
   /* 
@@ -164,6 +164,7 @@
 FOOTER 
 */
   footer {
-    top: 1016px;
+    top: auto;
+    bottom: 0;
   }
 }
