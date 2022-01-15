@@ -1,9 +1,6 @@
 /* desktop */
 
 @media screen and (min-width: 1500px) {
-  /* 
-Mobile
-*/
   .desktop {
     width: 1500px;
     height: 100vh;

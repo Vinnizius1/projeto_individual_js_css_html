@@ -1,9 +1,6 @@
 /* tablet landscape */
 
 @media screen and (min-width: 1112px) and (orientation: landscape) {
-  /* 
-  Mobile 
-  */
   .tablet_landscape {
     width: 1112px;
     height: 100vh;
