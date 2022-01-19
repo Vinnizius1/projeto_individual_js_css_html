@@ -7,9 +7,7 @@
     <title>ATIVIDADE 1 e 2 – HTML/CSS</title>
     <!-- CSS links -->
     <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="./css/tablet-style.css">
-    <link rel="stylesheet" href="css/tablet_landscape-style.css">
-    <link rel="stylesheet" href="css/desktop-style.css">
+    <link rel="stylesheet" href="./css/form-style.css">
     <!-- Ícone Newtab da guia  -->
     <link rel="icon" href="./assets/img/logo-colorido@2x.png" />
     <!-- Google Fonts -->
@@ -18,11 +16,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter&family=Lato:wght@400;700&display=swap" rel="stylesheet">
     
   <body>
-    <div class="mobile tablet tablet_landscape desktop">
+    <div class="mobile">
 
       <!-- Status Bar -->
       <header class="status-bar">
-
         <div class="frame-6">
           <img src="./assets/img/bolinhas-menu_superior.png" alt="bolinhas do sinal" class="bolinhas">
           <img src="./assets/img/sinal-menu_superior.png" alt="sinal" class="sinal">
@@ -39,45 +36,40 @@
 
       <!-- Header -->   
         <header class="header">
-
-          <div> 
-            <img src="./assets/img/logo-menu_inferior(versao2).png" alt="logo" class="logo">           
-          </div>
-
-          <h2 class="titulo">Controle Financeiro</h2>
-                    <!-- Menu hamburguer -->
-          <div class="hamburguer">
-            <img src="./assets/img/hamburguer-menu_inferior.png" alt="menu hamburguer" class="hamburguer-imagem">
-                    <!-- Navigation -->
-            <div class="navigation">
-              <div class="line1"></div>
-              <a href="#" class="cadastro-transacoes"><p>Cadastro de transações</p></a>
-              <a href="#" class="limpar-dados"><p>Limpar dados</p></a>
-              <img src="./assets/img/vectorX-menu_navegacao.png" alt="ícone X para fechar" class="vector-x">
-            </div>    
-          </div>
+          <img src="./assets/img/logo-menu_inferior(versao2).png" alt="logo" class="logo">           
+          
+          <p class="titulo">Controle Financeiro</p>
+          <div class="um">
+          <img src="./assets/img/hamburguer-menu_inferior.png" alt="menu hamburguer" class="hamburguer">    
+          <!-- Navigation -->        
+          <div class="navigation">
+            <img src="./assets/img/vectorX-menu_navegacao.png" alt="ícone X para fechar" class="vector-x"> 
+            <a href="#" class="cadastro-transacoes">Cadastro de transações</a>
+            <a href="#" class="limpar-dados">Limpar dados</a>
+          </div> 
+        </div>   
         </header>
 
-        <!-- Main (acima) -->
-        <form class="form-transacao">
-
+      <!-- Main -->
+      <main class="main">
+        <!-- Form -->
+        <form class="form">
           <div class="retangulo-tablet"></div>
 
           <p class="nova-transacao">Nova transação</p>
           
           <div class="input-transacao">
             <label class="tipo-transacao" for="tipo-select"
-              >Compra e Venda</label
-            >
+              >Compra e Venda</label>
             <select name="tipo-select" id="tipo-select">
               <option value="0">Compra</option>
+              <option value="1">Venda</option>
             </select>
           </div>
 
           <div class="input-mercadoria">
             <label class="tipo-mercadoria" for="tipo_mercadoria"
-              >Nome da mercadoria</label
-            >
+              >Nome da mercadoria</label>
             <input type="text" id="tipo_mercadoria" placeholder="Input" />
           </div>
 
@@ -86,39 +78,55 @@
             <input type="number" id="tipo_valor" placeholder="R$ 0,00" />
           </div>
 
-          <div class="input-botao">
-            <button class="input_botao">Adicionar transação</button>
-          </div>
+          <button class="input_botao">Adicionar transação</button>
           <hr id="hr" />
-         </form>
+        </form>
 
-        <!-- Main (abaixo) -->
-        <div class="account-statement">
-
-          <h3 class="extrato-transacao">Extrato de transações</h3>
+        <!-- Account -->
+        <div class="account">
+          <p class="extrato-transacao">Extrato de transações</p>
 
           <div class="frame">
-            <h4 class="extrato-mercadoria">Mercadoria</h4>
-            <h4 class="extrato-valor">Valor</h4>
+            
+            <div class="extratos">
+              <p class="extrato-mercadoria">Mercadoria</p>
+              <p class="extrato-valor">Valor</p>
+            </div>
+
             <hr class="hr-main1" />
-            <p class="primeiro-lorem">Lorem ipsum dolor sit amet consectetur</p>
-            <p class="primeiro-sinal">+</p>
-            <p class="primeiro-valor">R$ 12.999,99</p>
+
+            <div class="primeiro">
+              <p class="primeiro-sinal">+</p>
+              <p class="primeiro-lorem">Lorem ipsum dolor sit amet consectetur</p>      
+              <p class="primeiro-valor">R$ 12.999,99</p>
+            </div>
+
             <hr class="hr-main2" />
-            <p class="segundo-lorem">Quis nostrud exercitation</p>
-            <p class="segundo-sinal">-</p>
-            <p class="segundo-valor">R$ 99,99</p>
+
+            <div class="segundo">
+              <p class="segundo-sinal">-</p>
+              <p class="segundo-lorem">Quis nostrud exercitation</p>
+              <p class="segundo-valor">R$ 99,99</p>
+            </div>
+
             <hr class="hr-main3" />
-            <p class="terceiro-lorem">Lorem ipsum</p>
-            <p class="terceiro-sinal">+</p>
-            <p class="terceiro-valor">R$ 9,99</p>
+
+            <div class="terceiro">
+              <p class="terceiro-sinal">+</p>
+              <p class="terceiro-lorem">Lorem ipsum</p>
+              <p class="terceiro-valor">R$ 9,99</p>
+            </div>
+
             <hr class="hr-main4" />
             <hr class="hr-main5" />
+
             <p class="total">Total</p>
             <p class="total-valor">R$ 12.909,99</p>
+
             <p class="lucro">[LUCRO]</p>
           </div>
         </div>
+      </main>
 
       <!-- footer sem nenhuma informação -->
       <footer></footer>

@@ -10,7 +10,7 @@ Divisão de atividades:
 Desenvolvimento completo do HTML
 Início do desenvolvimento do CSS (versão mobile)
 
-( ) ATIVIDADE 2 – HTML/CSS:
+(X) ATIVIDADE 2 – HTML/CSS:
 Desenvolvimento completo do CSS (versão responsiva)
 
 -------
@@ -53,12 +53,7 @@ Answer:
         ---> display:none means that the tag in question will not appear on the page at all (although you can still interact with it through the dom). There will be no space allocated for it between the other tags.
 
         ---> visibility:hidden means that unlike display:none, the tag is not visible, but space is allocated for it on the page. The tag is rendered, it just isn't seen on the page.   
-
---------
-
-> Consertar:
-(X) Organizar as 5 div´s principais dentro da div mobile.
-
+   
 --------
 
 > Problema(s):  
