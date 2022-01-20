@@ -20,7 +20,8 @@ body {
 }
 
 /* */
-.nova-transacao {
+.nova-transacao,
+.separador {
   display: none;
 }
 
@@ -140,7 +141,7 @@ MENU NAVIGATION - HAMBURGUER HOVER EFFECT -
   right: 0;
   z-index: 1;
   width: 90%;
-  height: 100%;
+  height: 100vh;
 }
 
 /* 
@@ -271,14 +272,11 @@ footer {
   height: 8px;
 }
 
-/*
 
-
-media
-
-
-
+/* 
+MEDIA QUERIES 
 */
+/* Tablet Portrait */
 @media screen and (min-width: 768px) {
   .retangulo-tablet {
     margin: 20px 20px 0px 20px;
@@ -321,5 +319,114 @@ media
   .navigation-box:hover .menu {
     width: 30%;
     height: 100vh;
+  }
+}
+
+/* Tablet Landscape */
+@media screen and (min-width: 1112px) {
+  .header {
+    display: flex;
+    justify-content: flex-start;
+    height: 80px;
+    align-items: center;
+  }
+  .logo {
+    margin: 22px;
+    width: 40px;
+  }
+
+  .hamburguer {
+    display: none;
+  }
+
+  .menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    padding: 0 20px;
+    position: fixed;
+    right: 20px;
+    top: 41px;
+    background-color: #fff;
+  }
+
+  #semHover {
+    pointer-events: none;
+  }
+
+  .vector-x {
+    display: none;
+  }
+
+  .cadastro-transacoes {
+    color: #333;
+    padding-bottom: 0px;
+    font-weight: 600;
+  }
+
+  .limpar-dados {
+    color: #333;
+    font-weight: 600;
+  }
+
+  .separador {
+    display: inline-block;
+    margin: 10px 17px;
+    color: #979797;
+  }
+
+  .main {
+    flex-direction: row;
+  }
+
+  .retangulo-tablet {
+    margin: 26px 20px 0 20px;
+    width: 39%;
+  }
+
+  .form {
+    margin: 20px 15px;
+  }
+
+  .display-flex-tablet {
+    flex-direction: column;
+  }
+
+  .input-mercadoria {
+    margin: 0;
+  }
+
+  .account {
+    width: 61%;
+    margin: 26px 20px 0px 0px;
+  }
+}
+
+/* Desktop */
+@media screen and (min-width: 1500px) {
+  .status-bar {
+    display: none;
+  }
+
+  .header {
+    height: 80px;
+  }
+
+  .logo {
+    margin: 22px 20px 22px 200px;
+  }
+
+  .menu {
+    top: 20px;
+    right: 200px;
+  }
+
+  .retangulo-tablet {
+    margin: 30px 0px 0px 200px;
+  }
+
+  .account {
+    margin: 30px 200px 0px 20px;
   }
 }
