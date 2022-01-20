@@ -54,34 +54,36 @@
       <!-- Main -->
       <main class="main">
         <!-- Form -->
-        <form class="form">
-          <div class="retangulo-tablet"></div>
+        <div class="retangulo-tablet">
+          <form class="form">
+              <p class="nova-transacao">Nova transação</p>
 
-          <p class="nova-transacao">Nova transação</p>
-          
-          <div class="input-transacao">
-            <label class="tipo-transacao" for="tipo-select"
-              >Compra e Venda</label>
-            <select name="tipo-select" id="tipo-select">
-              <option value="0">Compra</option>
-              <option value="1">Venda</option>
-            </select>
-          </div>
+            <div class="display-flex-tablet">
+              <div class="input-transacao">
+                <label class="tipo-transacao" for="tipo-select"
+                  >Compra e Venda</label>
+                <select name="tipo-select" id="tipo-select">
+                  <option value="0">Compra</option>
+                  <option value="1">Venda</option>
+                </select>
+              </div>
 
-          <div class="input-mercadoria">
-            <label class="tipo-mercadoria" for="tipo_mercadoria"
-              >Nome da mercadoria</label>
-            <input type="text" id="tipo_mercadoria" placeholder="Input" />
-          </div>
+              <div class="input-mercadoria">
+                <label class="tipo-mercadoria" for="tipo_mercadoria"
+                  >Nome da mercadoria</label>
+                <input type="text" id="tipo_mercadoria" placeholder="Input" />
+              </div>
 
-          <div class="input-valor">
-            <label class="tipo-valor" for="tipo_valor">Valor</label>
-            <input type="number" id="tipo_valor" placeholder="R$ 0,00" />
-          </div>
+              <div class="input-valor">
+                <label class="tipo-valor" for="tipo_valor">Valor</label>
+                <input type="number" id="tipo_valor" placeholder="R$ 0,00" />
+              </div>
+            </div>
 
-          <button class="input_botao">Adicionar transação</button>
-          <hr id="hr" />
-        </form>
+              <button class="input_botao">Adicionar transação</button>
+              <hr id="hr" />
+          </form>
+        </div>
 
         <!-- Account -->
         <div class="account">

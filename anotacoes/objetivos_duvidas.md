@@ -17,7 +17,7 @@ Desenvolvimento completo do CSS (versão responsiva)
 
 > Dúvidas: 
 1. Como colocar "placeholder" para a caixa "select"?
-2. A importância/necessidade/efeitos do "position" em todas as classes, qual é?
+2. A importância/necessidade/efeitos do "position"?
 3. Qual a melhor forma de editar o "placeholder"?
 4. O sinal do "bluetooth" ficou ruim de TODO JEITO. Tentei usar "fontawesome" etc e nada. POR FIM, consegui baixar uma imagem de 256 x 256
 que acabou ficando melhor do que a do Figma (26 x 52).  
@@ -57,5 +57,3 @@ Answer:
 --------
 
 > Problema(s):  
-1. O "hover" sobre o ícone "hamburguer" traz o problema de atrapalhar algumas organizações de posicionamento de acordo com o layout do Figma, pois a classe "hamburguer" precisa ser pai da classe "navigation" para que o menu hover fique legal e funcionando bem.  
-Há solução pra isso?
