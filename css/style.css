@@ -94,7 +94,7 @@ HEADER
   cursor: pointer;
 }
 
-.navigation {
+.menu {
   display: none;
   background-color: #333;
 }
@@ -116,16 +116,16 @@ HEADER
   display: block;
   align-self: start;
   margin: 40px;
-  padding-bottom: 30px;
+  padding-bottom: 20px;
   width: 17px;
   cursor: pointer;
   color: #fff;
 }
 
 /*
-NAVIGATION - HAMBURGUER HOVER EFFECT -
+MENU NAVIGATION - HAMBURGUER HOVER EFFECT -
 */
-.um:hover .navigation {
+.navigation-box:hover .menu {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
