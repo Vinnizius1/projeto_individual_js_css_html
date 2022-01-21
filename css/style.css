@@ -220,6 +220,7 @@ Account
   display: inline-block;
   position: absolute;
   right: 10px;
+  font-size: 14px;
 }
 
 .hr-main2,
