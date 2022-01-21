@@ -208,6 +208,7 @@ Account
 .primeiro-lorem,
 .segundo-lorem,
 .terceiro-lorem {
+  font-size: 14px;
   display: inline-block;
   margin-left: 3%;
   width: 60%;
@@ -271,7 +272,6 @@ footer {
   bottom: 0px;
   height: 8px;
 }
-
 
 /* 
 MEDIA QUERIES 
