@@ -287,6 +287,15 @@ MEDIA QUERIES
     border-radius: 4px;
   }
 
+  .retangulo-tablet .form {
+    margin-top: 20px;
+  }
+
+  .retangulo-tablet .form .input_botao {
+    width: 37%;
+    margin-left: 63%;
+  }
+
   .nova-transacao {
     display: block;
     font-weight: bold;
@@ -388,8 +397,14 @@ MEDIA QUERIES
     width: 39%;
   }
 
-  .form {
+  .retangulo-tablet .form {
     margin: 20px 15px;
+  }
+
+  .retangulo-tablet .form .input_botao {
+    width: 100%;
+    margin: auto;
+    margin-bottom: 20px;
   }
 
   .display-flex-tablet {

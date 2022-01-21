@@ -70,36 +70,3 @@
 hr {
   border: 1px solid #979797;
 }
-
-
-/* 
-MEDIA QUERIES 
-*/
-/* Tablet Portrait */
-@media screen and (min-width: 768px) {
-  .form {
-    margin-top: 20px;
-  }
-
-  .input_botao {
-    width: 37%;
-    margin-left: 63%;
-  }
-}
-
-/* Tablet Landscape */
-@media screen and (min-width: 1112px) {
-  .input_botao {
-    width: 100%;
-    margin: auto;
-    margin-bottom: 20px;
-  }
-
-  /* Desktop */
-@media screen and (min-width: 1500px) {
-  .form {
-    margin-left: 15px;
-    margin-right: 15px;
-  }
-}
-}
