@@ -94,4 +94,12 @@ MEDIA QUERIES
     margin: auto;
     margin-bottom: 20px;
   }
+
+  /* Desktop */
+@media screen and (min-width: 1500px) {
+  .form {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+}
 }
