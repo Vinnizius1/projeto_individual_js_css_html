@@ -9,14 +9,9 @@
   font-family: "Lato", sans-serif;
 }
 
-body {
-  position: relative;
-  background-color: #fff;
-}
-
 /* MOBILE */
 .mobile {
-  width: 100%;
+  background-color: #fff;
 }
 
 /* */
