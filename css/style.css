@@ -12,6 +12,7 @@
 /* MOBILE */
 .mobile {
   background-color: #fff;
+  height: 100vh;
 }
 
 /* */
@@ -188,7 +189,13 @@ Account
   border: 1px solid #979797;
 }
 
-.primeiro {
+.primeiro,
+.segundo,
+.terceiro {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-right: 10px;
   margin-top: 7px;
   font-size: 14px;
   color: #000;
@@ -197,26 +204,33 @@ Account
 .primeiro-sinal,
 .segundo-sinal,
 .terceiro-sinal {
-  display: inline-block;
-  margin-left: 1%;
+  margin-left: 10px;
+  /* margin-left: 1%; */
 }
 
 .primeiro-lorem,
 .segundo-lorem,
 .terceiro-lorem {
   font-size: 14px;
+  /*
   display: inline-block;
   margin-left: 3%;
   width: 60%;
+  */
+  margin-left: 10px;
+  width: 53%;
 }
 
 .primeiro-valor,
 .segundo-valor,
 .terceiro-valor {
+  /*
   display: inline-block;
   position: absolute;
-  right: 10px;
+  right: 10px; */
   font-size: 14px;
+  margin-inline: auto;
+  margin-right: 0;
 }
 
 .hr-main2,
@@ -231,30 +245,34 @@ Account
   border: 1px solid #979797;
 }
 
+.totais {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 .total {
-  display: inline-block;
+  /* display: inline-block;*/
   margin-top: 11px;
-  margin-left: 6%;
+  margin-left: 30px;
   color: #000;
   font-weight: bold;
   font-size: 14px;
 }
-
 .total-valor {
-  display: inline-block;
-  position: absolute;
+  /*display: inline-block;*/
   margin-top: 11px;
-  right: 10px;
   color: #000;
   font-weight: bold;
   font-size: 14px;
-  text-align: right;
+  margin-right: 10px;
 }
 
 .lucro {
-  position: absolute;
+  /* position: absolute;
+  right: 10px; */
+  text-align: right;
+  margin-right: 10px;
   margin-top: 1px;
-  right: 10px;
   color: #000;
   font-size: 10px;
 }
