@@ -135,7 +135,6 @@ MENU NAVIGATION - HAMBURGUER HOVER EFFECT -
   position: absolute;
   top: 0;
   right: 0;
-  z-index: 1;
   width: 90%;
   height: 100vh;
 }
@@ -166,7 +165,6 @@ Account
 
 .frame {
   margin-top: 19px;
-  position: relative;
 }
 
 .extratos {
