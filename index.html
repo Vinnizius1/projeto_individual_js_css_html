@@ -64,24 +64,24 @@
                 <label class="tipo-transacao" for="tipo-select"
                   >Compra e Venda</label>
                 <select name="tipo-select" id="tipo-select">
-                  <option value="0">Compra</option>
-                  <option value="1">Venda</option>
+                  <option id="compra" value="0">Compra</option>
+                  <option id="venda" value="1">Venda</option>
                 </select>
               </div>
 
               <div class="input-mercadoria">
                 <label class="tipo-mercadoria" for="tipo_mercadoria"
                   >Nome da mercadoria</label>
-                <input type="text" id="tipo_mercadoria" placeholder="Input" />
+                <input name="nome" type="text" id="tipo_mercadoria" placeholder="Input" />
               </div>
 
               <div class="input-valor">
                 <label class="tipo-valor" for="tipo_valor">Valor</label>
-                <input type="number" id="tipo_valor" placeholder="R$ 0,00" />
+                <input name="valor" type="number" id="tipo_valor" placeholder="R$ 0,00" />
               </div>
             </div>
 
-            <button class="input_botao">Adicionar transação</button>
+            <button class="input_botao" type="button" onclick="botaoTransacao(event)">Adicionar transação</button>
             <hr id="hr" />
           </form>
         </div>
@@ -89,47 +89,10 @@
           <!-- Account -->
         <div class="account">
           <p class="extrato-transacao">Extrato de transações</p>
-
           <div class="frame">
-            <div class="extratos">
-              <p class="extrato-mercadoria">Mercadoria</p>
-              <p class="extrato-valor">Valor</p>
-            </div>
-
-            <hr class="hr-main1" />
-
-            <div class="primeiro">
-              <p class="primeiro-sinal">+</p>
-              <p class="primeiro-lorem">Lorem ipsum dolor sit amet consectetur</p>      
-              <p class="primeiro-valor">R$ 12.999,99</p>
-            </div>
-
-            <hr class="hr-main2" />
-
-            <div class="segundo">
-              <p class="segundo-sinal">-</p>
-              <p class="segundo-lorem">Quis nostrud exercitation</p>
-              <p class="segundo-valor">R$ 99,99</p>
-            </div>
-
-            <hr class="hr-main3" />
-
-            <div class="terceiro">
-              <p class="terceiro-sinal">+</p>
-              <p class="terceiro-lorem">Lorem ipsum</p>
-              <p class="terceiro-valor">R$ 9,99</p>
-            </div>
-
-            <hr class="hr-main4" />
-            <hr class="hr-main5" />
-
-            <div class="totais">
-              <p class="total">Total</p>
-              <p class="total-valor">R$ 12.909,99</p>
-            </div>
-
-            <p class="lucro">[LUCRO]</p>
+            
           </div>
+           
         </div>
       </main>
 
