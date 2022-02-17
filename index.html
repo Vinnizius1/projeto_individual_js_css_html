@@ -1,60 +1,90 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ATIVIDADE 1 e 2 – HTML/CSS</title>
     <!-- CSS links -->
-    <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="./css/form-style.css">
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/form-style.css" />
     <!-- Ícone Newtab da guia  -->
     <link rel="icon" href="./assets/img/logo-colorido@2x.png" />
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Lato:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
   <body>
     <div class="mobile">
-
-        <!-- 1º Header -->
+      <!-- 1º Header -->
       <header class="status-bar">
         <div class="frame-6">
-          <img src="./assets/img/bolinhas-menu_superior.png" alt="bolinhas do sinal" class="bolinhas">
-          <img src="./assets/img/sinal-menu_superior.png" alt="sinal" class="sinal">
+          <img
+            src="./assets/img/bolinhas-menu_superior.png"
+            alt="bolinhas do sinal"
+            class="bolinhas"
+          />
+          <img
+            src="./assets/img/sinal-menu_superior.png"
+            alt="sinal"
+            class="sinal"
+          />
         </div>
 
         <p class="horas">9:42 AM</p>
 
         <div class="frame-8">
-          <img src="./assets/img/bluetooth-menu_superior.png" alt="bluetooth" class="bluetooth">
+          <img
+            src="./assets/img/bluetooth-menu_superior.png"
+            alt="bluetooth"
+            class="bluetooth"
+          />
           <p class="porcentagem">42%</p>
-          <img src="./assets/img/bateria-menu_superior.png" alt="bateria" class="bateria">
+          <img
+            src="./assets/img/bateria-menu_superior.png"
+            alt="bateria"
+            class="bateria"
+          />
         </div>
       </header>
 
-        <!-- 2º Header -->   
+      <!-- 2º Header -->
       <header class="header">
-        <img src="./assets/img/logo-menu_inferior(versao2).png" alt="logo" class="logo">           
-          
+        <img
+          src="./assets/img/logo-menu_inferior(versao2).png"
+          alt="logo"
+          class="logo"
+        />
+
         <p class="titulo">Controle Financeiro</p>
 
         <div class="navigation-box" id="semHover">
-          <img src="./assets/img/hamburguer-menu_inferior.png" alt="menu hamburguer" class="hamburguer">    
-            <!-- Navigation Menu-->        
+          <img
+            src="./assets/img/hamburguer-menu_inferior.png"
+            alt="menu hamburguer"
+            class="hamburguer"
+          />
+          <!-- Navigation Menu-->
           <div class="menu">
-            <img src="./assets/img/vectorX-menu_navegacao.png" alt="ícone X para fechar" class="vector-x"> 
+            <img
+              src="./assets/img/vectorX-menu_navegacao.png"
+              alt="ícone X para fechar"
+              class="vector-x"
+            />
             <a href="#" class="cadastro-transacoes">Cadastro de transações</a>
             <div class="separador">|</div>
             <a href="#" class="limpar-dados">Limpar dados</a>
-          </div> 
-        </div>   
+          </div>
+        </div>
       </header>
 
-        <!-- Main -->
+      <!-- Main -->
       <main class="main">
-          <!-- Form -->
+        <!-- Form -->
         <div class="retangulo-tablet">
           <form class="form">
             <p class="nova-transacao">Nova transação</p>
@@ -62,8 +92,14 @@
             <div class="display-flex-tablet">
               <div class="input-transacao">
                 <label class="tipo-transacao" for="tipo-select"
-                  >Compra e Venda</label>
-                <select name="tipo-select" id="tipo-select">
+                  >Compra e Venda</label
+                >
+                <select
+                  name="tipo-select"
+                  id="tipo-select"
+                  required
+                  onchange="validarSelect()"
+                >
                   <option id="compra" value="0">Compra</option>
                   <option id="venda" value="1">Venda</option>
                 </select>
@@ -71,34 +107,51 @@
 
               <div class="input-mercadoria">
                 <label class="tipo-mercadoria" for="tipo_mercadoria"
-                  >Nome da mercadoria</label>
-                <input name="nome" type="text" id="tipo_mercadoria" placeholder="Input" />
+                  >Nome da mercadoria</label
+                >
+                <input
+                  required
+                  name="nome"
+                  type="text"
+                  id="tipo_mercadoria"
+                  placeholder="Input"
+                />
               </div>
 
               <div class="input-valor">
                 <label class="tipo-valor" for="tipo_valor">Valor</label>
-                <input name="valor" type="number" id="tipo_valor" placeholder="R$ 0,00" />
+                <input
+                  required
+                  name="valor"
+                  type="number"
+                  id="tipo_valor"
+                  placeholder="R$ 0,00"
+                />
               </div>
             </div>
 
-            <button class="input_botao" type="button" onclick="botaoTransacao(event)">Adicionar transação</button>
+            <button
+              class="input_botao"
+              type="submit"
+              onclick="botaoTransacao(event)"
+            >
+              Adicionar transação
+            </button>
             <hr id="hr" />
           </form>
         </div>
 
-          <!-- Account -->
+        <!-- Account -->
         <div class="account">
           <p class="extrato-transacao">Extrato de transações</p>
-          <div class="frame">
-            
-          </div>
-           
+          <div class="frame"></div>
         </div>
       </main>
 
-        <!-- footer sem nenhuma informação -->
+      <!-- footer sem nenhuma informação -->
       <footer></footer>
     </div>
-    <script src="./assets/index.js"></script>
+    <script src="./assets/js/index.js"></script>
+    <script src="./assets/js/validacoes.js"></script>
   </body>
 </html>
