@@ -6,48 +6,46 @@ const extratos = document.querySelector(".extratos");
 const extrato_mercadoria = document.querySelector(".extrato-mercadoria");
 const extrato_valor = document.querySelector(".extrato-valor");
 
+// "frame" é a div no index.html que recebe a string dos dados/cadastros:
 let frame = document.querySelector(".frame");
+
+// Recebe o valor dinamicamente e depois diz se teve lucro ou despesa?
 let valorTotal = document.querySelector(".total-valor");
 let lucroOuPrejuizo = document.querySelector(".lucro");
 
-
+// "account" é a div pai de "frame":
 const account = document.querySelector(".account");
-const accountUltimoFilhoFrame =account.lastElementChild;
-/* 
-Variáveis GLOBAIS 
-*/
-// Variável do conteúdo que será passado pro DOM:
+const accountUltimoFilhoFrame = account.lastElementChild;
+
+/* Variáveis GLOBAIS */
+// Receberá o conteúdo que será passado pro DOM:
 let mercadoria;
 
-// Variável do valor final, ou seja, após a soma de cada valor passado no input "Valor" pelo usuário:
+// Soma cada valor passado no input "Valor" pelo usuário:
 let valorFinal;
 
-// Arrays criados para armazenarem cada "valor.value" inserido e depois ser usado numa função que somará esses valores:
+// Arrays criados para armazenarem cada "valor.value" inserido e depois usados numa função que somará os valores:
 let valoresAdicionados = [];
 let valoresAdicionados2 = [];
 
-// Variável que receberá os arrays para se utilizar o método Reduce() na soma dos valores:
+// Receberá os arrays e depois utilizará o método Reduce() pra somar valores:
 let spread;
 
-// Variável onde os dados serão armazenados:
+// Onde os dados serão armazenados já parseados:
 let mercadorias = JSON.parse(localStorage.getItem("lista")) || [];
 
-// Método forEach() para persistir na tela os dados cadastrados e então salvos no localStorage:
+// Método TOP forEach() para persistir na tela os dados cadastrados:
 mercadorias.forEach((mercadoria) => {
   frame.insertAdjacentHTML("afterend", mercadoria);
 });
 
-/* 
-FUNÇÃO onclick() no botão "Adicionar transação": 
-*/
-function botaoTransacao(event) {
-  //event.preventDefault();
-
+/* FUNÇÃO onclick() no botão "Adicionar transação" */
+function botaoTransacao() {
   // Converte a escolha do input "Compra e Venda" para o sinal "+" ou "-":
   let maisOuMenos = compraVenda.value;
   maisOuMenos == 0 ? (maisOuMenos = "-") : (maisOuMenos = "+");
 
-  // Condição para direcionar o "if/else":
+  // Condição para direcionar o seguinte "if/else":
   let existeLocalstorage = localStorage.getItem("lista");
 
   if (existeLocalstorage) {
@@ -62,23 +60,21 @@ function botaoTransacao(event) {
 
     valorFinal = spread.reduce((total, individual) => total + individual);
 
-    /* 
-    Cria a variável que substituirá a do 1º valor passado no input "Valor" 
-    */
+    // Cria a variável que substituirá a do 1º valor passado no input "Valor":
     let novoTotal = document.createElement("p");
     novoTotal.className = "total-valor";
     // Muda o HTML:
     novoTotal.innerHTML = `R$ ${valorFinal}`;
-    // selecionar o elemento que quero trocar
+    // seleciona o elemento que quero trocar:
     let antigoTotal = document.querySelector(".total-valor");
-    // selecionar o pai do "antigoTotal":
+    // Seleciona o pai do "antigoTotal":
     let pai = antigoTotal.parentNode;
-    // trocar os elementos:
+    // Troca os elementos:
     pai.replaceChild(novoTotal, antigoTotal);
 
     /* 
-    Selecionar novamente o caminho `<p class="lucro">${lucroOuPrejuizo}</p>` 
-    DÚVIDA: Por que isso aconteceu? Mudou de referência???
+    Precisei selecionar novamente o caminho `<p class="lucro">${lucroOuPrejuizo}</p>` uai!
+    DÚVIDA: Por que isso aconteceu? Mudou a REFERÊNCIA???
     */
     let lucroOuPrejuizo2 = document.querySelector(".frame .lucro");
     // Muda o HTML de acordo com esta condição ternária:
@@ -96,7 +92,7 @@ function botaoTransacao(event) {
     <hr class="hr-main4" />
     `;
 
-    // Insere o código de mercadoria 'dentro do elemento "<div>frame</div>", antes de seu primeiro filho (childNode)':
+    // Insere o código de mercadoria dentro do elemento "<div>frame</div>", antes de seu primeiro filho (childNode):
     frame.insertAdjacentHTML("afterbegin", mercadoria);
 
     // Zera os campos após o cadastro do produto:
@@ -107,7 +103,7 @@ function botaoTransacao(event) {
     // Atribui o valor inserido no input "Valor" à variável "valorTotal" apenas no 1º cadastro de transação:
     valorTotal = valor;
 
-    // Adiciona ao array o sinal de "+" ou "-" e soma com o valor passado no input "valor", que é igual à variável "valorTotal":
+    // Adiciona ao array o sinal de "+" ou "-" e soma com o valor passado no input "valor":
     valoresAdicionados.push(maisOuMenos + valorTotal.value);
 
     // Saber se a mensagem será "[Lucro]" ou "[Despesa]":
@@ -133,7 +129,7 @@ function botaoTransacao(event) {
     <p class="lucro">${lucroOuPrejuizo}</p>
     `;
 
-    // Adiciona pela 1ª vez o conteúdo de mercadoria 'dentro do elemento "<div>frame</div>", após seu último filho (childNode)':
+    // Adiciona pela 1ª vez o conteúdo de mercadoria dentro do elemento "<div>frame</div>", após seu último filho (childNode):
     frame.insertAdjacentHTML("beforeend", mercadoria);
 
     // Zera os campos após o cadastro do produto:
@@ -141,32 +137,27 @@ function botaoTransacao(event) {
     valor.value = "";
     compraVenda.focus();
   }
-
   // Adição de cada "mercadoria" no array "mercadorias", que por sua vez será enviado para o localStorage via função setItem():
   mercadorias.push(mercadoria);
 
   salvaNoLocalStorage();
-  limpaLocalStorage()
+  limpaLocalStorage();
 }
 
-/*
-FUNÇÃO setItem() do localStorage: 
-*/
 function salvaNoLocalStorage() {
   localStorage.setItem("lista", JSON.stringify(mercadorias));
 }
 
-/* 
-FUNÇÃO limparTela(): 
-*/
 function limpaLocalStorage() {
   const limparDados = document.querySelector(".limpar-dados");
-  
-  // limpa o localStorage e a DOM
+  // limpa o localStorage e a DOM:
   limparDados.addEventListener("click", function () {
     localStorage.clear();
-    accountUltimoFilhoFrame.remove()
-  }); 
+    accountUltimoFilhoFrame.remove();
+    location.reload();
+  });
+  // Zera o campo após a função limpaLocalStorage() e volta o focus:
+  compraVenda.value = "";
 }
 
 // const mensagemExtrato = document.createElement("p");

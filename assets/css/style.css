@@ -367,7 +367,7 @@ MEDIA QUERIES
     height: 40px;
     flex-direction: row;
   }
-  .menu {
+  .header .navigation-box .menu {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -444,7 +444,8 @@ MEDIA QUERIES
     margin: 22px 20px 22px 200px;
   }
 
-  .menu {
+  /* Mais especificidade neste código para preservar o comportamento da tela */
+  .mobile .header .navigation-box .menu {
     top: 20px;
     right: 200px;
   }
