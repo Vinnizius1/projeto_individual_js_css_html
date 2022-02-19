@@ -97,9 +97,9 @@
                 <select
                   name="tipo-select"
                   id="tipo-select"
-                  required
-                  onchange="validarSelect()"
+                  autofocus
                 >
+                  <option label="Selecione a opção" value=""></option>
                   <option id="compra" value="0">Compra</option>
                   <option id="venda" value="1">Venda</option>
                 </select>
@@ -110,18 +110,16 @@
                   >Nome da mercadoria</label
                 >
                 <input
-                  required
                   name="nome"
                   type="text"
                   id="tipo_mercadoria"
-                  placeholder="Input"
+                  placeholder="Digite o nome"
                 />
               </div>
 
               <div class="input-valor">
                 <label class="tipo-valor" for="tipo_valor">Valor</label>
                 <input
-                  required
                   name="valor"
                   type="number"
                   id="tipo_valor"
@@ -133,7 +131,7 @@
             <button
               class="input_botao"
               type="submit"
-              onclick="botaoTransacao(event)"
+              onclick="validarSelect(event)"
             >
               Adicionar transação
             </button>

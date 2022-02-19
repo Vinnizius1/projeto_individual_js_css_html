@@ -356,10 +356,17 @@ MEDIA QUERIES
     width: 40px;
   }
 
-  .hamburguer {
+  .hamburguer,
+  .vector-x {
     display: none;
   }
 
+  /* Ajustes no ".navigation-box" para manter o onclick ok em: <a href="#" class="limpar-dados">Limpar dados</a> */
+  .navigation-box:hover .menu {
+    width: 357.95px;
+    height: 40px;
+    flex-direction: row;
+  }
   .menu {
     display: flex;
     justify-content: space-between;
@@ -370,14 +377,6 @@ MEDIA QUERIES
     right: 20px;
     top: 41px;
     background-color: #fff;
-  }
-
-  #semHover {
-    pointer-events: none;
-  }
-
-  .vector-x {
-    display: none;
   }
 
   .cadastro-transacoes {

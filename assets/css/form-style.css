@@ -1,5 +1,5 @@
 /* form */
-::-webkit-input-placeholder {
+input::placeholder {
   padding-left: 12px;
   font-size: 13px;
   color: #888;

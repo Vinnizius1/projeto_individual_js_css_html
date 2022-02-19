@@ -2,14 +2,17 @@ const compraVenda = document.getElementById("tipo-select");
 const nomeDaMercadoria = document.querySelector(".input-mercadoria input");
 const botao = document.querySelector(".input_botao");
 const valor = document.querySelector(".input-valor input");
-const frame = document.querySelector(".frame");
 const extratos = document.querySelector(".extratos");
 const extrato_mercadoria = document.querySelector(".extrato-mercadoria");
 const extrato_valor = document.querySelector(".extrato-valor");
 
+let frame = document.querySelector(".frame");
 let valorTotal = document.querySelector(".total-valor");
 let lucroOuPrejuizo = document.querySelector(".lucro");
 
+
+const account = document.querySelector(".account");
+const accountUltimoFilhoFrame =account.lastElementChild;
 /* 
 Variáveis GLOBAIS 
 */
@@ -38,7 +41,7 @@ mercadorias.forEach((mercadoria) => {
 FUNÇÃO onclick() no botão "Adicionar transação": 
 */
 function botaoTransacao(event) {
-  event.preventDefault();
+  //event.preventDefault();
 
   // Converte a escolha do input "Compra e Venda" para o sinal "+" ou "-":
   let maisOuMenos = compraVenda.value;
@@ -87,7 +90,7 @@ function botaoTransacao(event) {
     <div class="primeiro">
         <p class="primeiro-sinal">${maisOuMenos}</p>
         <p class="primeiro-lorem">${nomeDaMercadoria.value}</p>      
-        <p class="primeiro-valor">${valor.value}</p>
+        <p class="primeiro-valor">R$ ${valor.value}</p>
     </div>
 
     <hr class="hr-main4" />
@@ -116,7 +119,7 @@ function botaoTransacao(event) {
     <div class="primeiro">
         <p class="primeiro-sinal">${maisOuMenos}</p>
         <p class="primeiro-lorem">${nomeDaMercadoria.value}</p>      
-        <p class="primeiro-valor">${valor.value}</p>
+        <p class="primeiro-valor">R$ ${valor.value}</p>
     </div>
 
     <hr class="hr-main4" />
@@ -142,8 +145,8 @@ function botaoTransacao(event) {
   // Adição de cada "mercadoria" no array "mercadorias", que por sua vez será enviado para o localStorage via função setItem():
   mercadorias.push(mercadoria);
 
-  // Função para salvar no localStorage:
   salvaNoLocalStorage();
+  limpaLocalStorage()
 }
 
 /*
@@ -156,9 +159,14 @@ function salvaNoLocalStorage() {
 /* 
 FUNÇÃO limparTela(): 
 */
-function limpaTela() {
-  // Salva no localStorage:
-  salvaNoLocalStorage();
+function limpaLocalStorage() {
+  const limparDados = document.querySelector(".limpar-dados");
+  
+  // limpa o localStorage e a DOM
+  limparDados.addEventListener("click", function () {
+    localStorage.clear();
+    accountUltimoFilhoFrame.remove()
+  }); 
 }
 
 // const mensagemExtrato = document.createElement("p");
