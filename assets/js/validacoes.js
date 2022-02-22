@@ -14,7 +14,7 @@ function validarSelect(event) {
     nomeDaMercadoria2 == "" ||
     valor2 == ""
   ) {
-    alert("Porfavor, preencha os campos!");
+    alert("Por favor, preencha os campos!");
     return false;
   } else {
     botaoTransacao();

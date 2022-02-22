@@ -77,7 +77,7 @@
             />
             <a href="#" class="cadastro-transacoes">Cadastro de transações</a>
             <div class="separador">|</div>
-            <a href="#" class="limpar-dados">Limpar dados</a>
+            <a href="#" class="limpar-dados" onclick="limpaLocalStorage()">Limpar dados</a>
           </div>
         </div>
       </header>
@@ -121,9 +121,11 @@
                 <label class="tipo-valor" for="tipo_valor">Valor</label>
                 <input
                   name="valor"
-                  type="number"
+                  type="text"
                   id="tipo_valor"
+                  maxlength="9"
                   placeholder="R$ 0,00"
+                  onkeyup="testaCampoValor()"
                 />
               </div>
             </div>

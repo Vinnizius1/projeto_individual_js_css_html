@@ -13,8 +13,9 @@ let frame = document.querySelector(".frame");
 let valorTotal = document.querySelector(".total-valor");
 let lucroOuPrejuizo = document.querySelector(".lucro");
 
-// "account" é a div pai de "frame":
+// "account" é a div PAI de "frame":
 const account = document.querySelector(".account");
+// Esta "accountUltimoFilhoFrame" receberá "frame", para então excluí-la da DOM por meio da função limpaLocalStorage():
 const accountUltimoFilhoFrame = account.lastElementChild;
 
 /* Variáveis GLOBAIS */
@@ -43,12 +44,15 @@ mercadorias.forEach((mercadoria) => {
 function botaoTransacao() {
   // Converte a escolha do input "Compra e Venda" para o sinal "+" ou "-":
   let maisOuMenos = compraVenda.value;
+  // "0" por causa deste HTML: <option id="compra" value="0">Compra</option>
   maisOuMenos == 0 ? (maisOuMenos = "-") : (maisOuMenos = "+");
 
   // Condição para direcionar o seguinte "if/else":
   let existeLocalstorage = localStorage.getItem("lista");
 
+  // Agora a utilização da variável "existeLocalstorage":
   if (existeLocalstorage) {
+    // Este é o 2º array:
     valoresAdicionados2.push(maisOuMenos + valor.value);
 
     spread = [...valoresAdicionados, ...valoresAdicionados2];
@@ -56,8 +60,10 @@ function botaoTransacao() {
     valoresAdicionados = valoresAdicionados.map(Number);
     valoresAdicionados2 = valoresAdicionados2.map(Number);
 
+    // Soma os arrays numa variável:
     spread = [...valoresAdicionados, ...valoresAdicionados2];
 
+    // Método reduce() para trazer a soma dos 2 arrays na variável "valorFinal":
     valorFinal = spread.reduce((total, individual) => total + individual);
 
     // Cria a variável que substituirá a do 1º valor passado no input "Valor":
@@ -103,7 +109,7 @@ function botaoTransacao() {
     // Atribui o valor inserido no input "Valor" à variável "valorTotal" apenas no 1º cadastro de transação:
     valorTotal = valor;
 
-    // Adiciona ao array o sinal de "+" ou "-" e soma com o valor passado no input "valor":
+    // Adiciona ao 1º array criado o sinal de "+" ou "-" e soma com o valor passado no input "valor":
     valoresAdicionados.push(maisOuMenos + valorTotal.value);
 
     // Saber se a mensagem será "[Lucro]" ou "[Despesa]":
@@ -141,7 +147,6 @@ function botaoTransacao() {
   mercadorias.push(mercadoria);
 
   salvaNoLocalStorage();
-  limpaLocalStorage();
 }
 
 function salvaNoLocalStorage() {
@@ -149,17 +154,39 @@ function salvaNoLocalStorage() {
 }
 
 function limpaLocalStorage() {
-  const limparDados = document.querySelector(".limpar-dados");
-  // limpa o localStorage e a DOM:
-  limparDados.addEventListener("click", function () {
+  // Mensagem de confirmação antes da exclusão:
+  let alertaSobreExclusao = confirm(
+    "Deseja prosseguir em excluir todos os dados?"
+  );
+
+  // Limpa o localStorage e a DOM:
+  if (alertaSobreExclusao) {
     localStorage.clear();
     accountUltimoFilhoFrame.remove();
     location.reload();
-  });
-  // Zera o campo após a função limpaLocalStorage() e volta o focus:
+  } else {
+    return false;
+  }
+  // Zera o campo e volta o focus:
   compraVenda.value = "";
 }
 
-// const mensagemExtrato = document.createElement("p");
-// mensagemExtrato.innerHTML = "Nenhuma transação cadastrada.";
-// mensagemExtrato.style.margin = "20px";
+
+// Código do blog "https://www.blogson.com.br/formatar-moeda-dinheiro-com-javascript-do-jeito-facil/":
+function testaCampoValor() {
+ let elemento = document.getElementById("tipo_valor");
+ let valor = elemento.value;
+
+ valor = valor + "";
+ valor = parseInt(valor.replace(/[\D]+/g, ""));
+ valor = valor + "";
+ valor = valor.replace(/([0-9]{2})$/g, ",$1");
+
+ if (valor.lenght > 6) {
+   valor = valor.replace(/([0-9]{3}),([0-9]{2}$)/g, ".$1,$2");
+ }
+
+ elemento.value = valor;
+ if(valor == "NaN") elemento.value = "";
+
+}

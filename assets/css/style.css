@@ -154,6 +154,17 @@ Account
   margin: 20px 20px 0px;
 }
 
+.form .input_botao {
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+.form .input_botao:hover {
+  opacity: 0.8;
+}
+.form .input_botao:active {
+  opacity: 0.6;
+}
+
 .extrato-transacao {
   margin-top: 21px;
   text-align: center;
@@ -379,15 +390,26 @@ MEDIA QUERIES
     background-color: #fff;
   }
 
+  .limpar-dados:hover,
+  .cadastro-transacoes:hover {
+    opacity: 0.8;
+  }
+  .limpar-dados:active,
+  .cadastro-transacoes:active {
+    opacity: 0.6;
+  }
+
   .cadastro-transacoes {
     color: #333;
     padding-bottom: 0px;
     font-weight: 600;
+    transition: opacity 0.15s;
   }
 
   .limpar-dados {
     color: #333;
     font-weight: 600;
+    transition: opacity 0.15s;
   }
 
   .separador {
