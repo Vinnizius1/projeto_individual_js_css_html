@@ -40,6 +40,11 @@ mercadorias.forEach((mercadoria) => {
   frame.insertAdjacentHTML("afterend", mercadoria);
 });
 
+// Variáveis pro cálculo aceitando vírgula para separar casas decimais:
+let valorParseado; // Será pro 2º valor adicionado
+let valorParseado1; 
+let valorParseado2;
+
 /* FUNÇÃO onclick() no botão "Adicionar transação" */
 function botaoTransacao() {
   // Converte a escolha do input "Compra e Venda" para o sinal "+" ou "-":
@@ -53,7 +58,12 @@ function botaoTransacao() {
   // Agora a utilização da variável "existeLocalstorage":
   if (existeLocalstorage) {
     // Este é o 2º array:
-    valoresAdicionados2.push(maisOuMenos + valor.value);
+    // valorParseado refere-se ao 2º valor inserido no campo:
+    valorParseado = valor.value;
+    valorParseado = parseFloat(valorParseado.replace(",", "."));
+
+    // Adiciona ao 2º array criado o sinal de "+" ou "-" e soma com o valor passado no input valor (já parseado):
+    valoresAdicionados2.push(maisOuMenos + valorParseado);
 
     spread = [...valoresAdicionados, ...valoresAdicionados2];
 
@@ -69,11 +79,19 @@ function botaoTransacao() {
     // Cria a variável que substituirá a do 1º valor passado no input "Valor":
     let novoTotal = document.createElement("p");
     novoTotal.className = "total-valor";
+    
+    // Iguala o valorFinal à variável que virará string para sofrer o replace:
+    valorParseado2 = valorFinal;
+    valorParseado2 = String(valorParseado2);
+    // Igualamos a string valorParseado2 à ela mesma, porém, esta nova variável virá com o replace já realizado:
+    valorParseado2 = valorParseado2.replace(".", ",");
+
     // Muda o HTML:
-    novoTotal.innerHTML = `R$ ${valorFinal}`;
+    // O novoTotal já virá com o valor (final) corrigido pra vírgula:
+    novoTotal.innerHTML = `R$ ${valorParseado2}`;
     // seleciona o elemento que quero trocar:
     let antigoTotal = document.querySelector(".total-valor");
-    // Seleciona o pai do "antigoTotal":
+    // Seleciona o pai do antigoTotal:
     let pai = antigoTotal.parentNode;
     // Troca os elementos:
     pai.replaceChild(novoTotal, antigoTotal);
@@ -87,7 +105,7 @@ function botaoTransacao() {
     Math.sign(valorFinal) == -1
       ? (lucroOuPrejuizo2.textContent = "[Despesa]")
       : (lucroOuPrejuizo2.textContent = "[Lucro]");
-
+   
     mercadoria = `
     <div class="primeiro">
         <p class="primeiro-sinal">${maisOuMenos}</p>
@@ -97,7 +115,7 @@ function botaoTransacao() {
 
     <hr class="hr-main4" />
     `;
-
+    
     // Insere o código de mercadoria dentro do elemento "<div>frame</div>", antes de seu primeiro filho (childNode):
     frame.insertAdjacentHTML("afterbegin", mercadoria);
 
@@ -108,9 +126,14 @@ function botaoTransacao() {
   } else {
     // Atribui o valor inserido no input "Valor" à variável "valorTotal" apenas no 1º cadastro de transação:
     valorTotal = valor;
+    
+    // Analisa um argumento string e retorna um número de ponto flutuante. Depois faz o replace/troca da vírgula pra ponto.
+    // Este é o 1º valor inserido na aplicação:
+    valorParseado1 = valor.value;
+    valorParseado1 = parseFloat(valorParseado1.replace(",", "."));
 
-    // Adiciona ao 1º array criado o sinal de "+" ou "-" e soma com o valor passado no input "valor":
-    valoresAdicionados.push(maisOuMenos + valorTotal.value);
+    // Adiciona ao 1º array criado o sinal de "+" ou "-" e soma com o valor passado no input valor (já parseado):
+    valoresAdicionados.push(maisOuMenos + valorParseado1);
 
     // Saber se a mensagem será "[Lucro]" ou "[Despesa]":
     maisOuMenos == "-"
@@ -134,7 +157,7 @@ function botaoTransacao() {
 
     <p class="lucro">${lucroOuPrejuizo}</p>
     `;
-
+    
     // Adiciona pela 1ª vez o conteúdo de mercadoria dentro do elemento "<div>frame</div>", após seu último filho (childNode):
     frame.insertAdjacentHTML("beforeend", mercadoria);
 
@@ -171,7 +194,6 @@ function limpaLocalStorage() {
   compraVenda.value = "";
 }
 
-
 // Código do blog "https://www.blogson.com.br/formatar-moeda-dinheiro-com-javascript-do-jeito-facil/":
 function testaCampoValor() {
  let elemento = document.getElementById("tipo_valor");
@@ -188,5 +210,4 @@ function testaCampoValor() {
 
  elemento.value = valor;
  if(valor == "NaN") elemento.value = "";
-
 }
