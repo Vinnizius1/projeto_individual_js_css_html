@@ -35,27 +35,27 @@ let spread;
 // Onde os dados serão armazenados já parseados:
 let mercadorias = JSON.parse(localStorage.getItem("lista")) || [];
 
-// Método TOP forEach() para persistir na tela os dados cadastrados:
+// Método forEach() para persistir na tela os dados cadastrados:
 mercadorias.forEach((mercadoria) => {
   frame.insertAdjacentHTML("afterend", mercadoria);
 });
 
 // Variáveis pro cálculo aceitando vírgula para separar casas decimais:
 let valorParseado; // Será pro 2º valor adicionado
-let valorParseado1; 
-let valorParseado2;
+let valorParseado1; // Este refere-se ao 1º valor inserido na aplicação
+let valorParseado2; // Refere-se ao valor final, dizendo se teve lucro ou despesa
 
 /* FUNÇÃO onclick() no botão "Adicionar transação" */
 function botaoTransacao() {
   // Converte a escolha do input "Compra e Venda" para o sinal "+" ou "-":
   let maisOuMenos = compraVenda.value;
-  // "0" por causa deste HTML: <option id="compra" value="0">Compra</option>
+  // "0" por causa deste HTML: <option id="compra" value="0">Compra</option>. Se teve compra, o sinal será negativo:
   maisOuMenos == 0 ? (maisOuMenos = "-") : (maisOuMenos = "+");
 
-  // Condição para direcionar o seguinte "if/else":
+  // Condição para direcionar o "if/else" logo abaixo:
   let existeLocalstorage = localStorage.getItem("lista");
 
-  // Agora a utilização da variável "existeLocalstorage":
+  // Agora a utilização dessa variável "existeLocalstorage":
   if (existeLocalstorage) {
     // Este é o 2º array:
     // valorParseado refere-se ao 2º valor inserido no campo:
@@ -65,23 +65,24 @@ function botaoTransacao() {
     // Adiciona ao 2º array criado o sinal de "+" ou "-" e soma com o valor passado no input valor (já parseado):
     valoresAdicionados2.push(maisOuMenos + valorParseado);
 
+    // Esta spread está com formato em "string". Será convertida pra "number" após esta operação:
     spread = [...valoresAdicionados, ...valoresAdicionados2];
-
+    
     valoresAdicionados = valoresAdicionados.map(Number);
     valoresAdicionados2 = valoresAdicionados2.map(Number);
 
-    // Soma os arrays numa variável:
+    // Junta os arrays já no tipo "number":
     spread = [...valoresAdicionados, ...valoresAdicionados2];
-
+    
     // Método reduce() para trazer a soma dos 2 arrays na variável "valorFinal":
     valorFinal = spread.reduce((total, individual) => total + individual);
-
-    // Cria a variável que substituirá a do 1º valor passado no input "Valor":
+    
+    // Cria a variável que substituirá a variável do 1º valor passado no input Valor:
     let novoTotal = document.createElement("p");
     novoTotal.className = "total-valor";
     
     // Iguala o valorFinal à variável que virará string para sofrer o replace:
-    valorParseado2 = valorFinal;
+    valorParseado2 = valorFinal.toFixed(2)
     valorParseado2 = String(valorParseado2);
     // Igualamos a string valorParseado2 à ela mesma, porém, esta nova variável virá com o replace já realizado:
     valorParseado2 = valorParseado2.replace(".", ",");
