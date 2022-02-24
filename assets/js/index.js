@@ -67,22 +67,22 @@ function botaoTransacao() {
 
     // Esta spread está com formato em "string". Será convertida pra "number" após esta operação:
     spread = [...valoresAdicionados, ...valoresAdicionados2];
-    
+
     valoresAdicionados = valoresAdicionados.map(Number);
     valoresAdicionados2 = valoresAdicionados2.map(Number);
 
     // Junta os arrays já no tipo "number":
     spread = [...valoresAdicionados, ...valoresAdicionados2];
-    
+
     // Método reduce() para trazer a soma dos 2 arrays na variável "valorFinal":
     valorFinal = spread.reduce((total, individual) => total + individual);
-    
+
     // Cria a variável que substituirá a variável do 1º valor passado no input Valor:
     let novoTotal = document.createElement("p");
     novoTotal.className = "total-valor";
-    
+
     // Iguala o valorFinal à variável que virará string para sofrer o replace:
-    valorParseado2 = valorFinal.toFixed(2)
+    valorParseado2 = valorFinal.toFixed(2);
     valorParseado2 = String(valorParseado2);
     // Igualamos a string valorParseado2 à ela mesma, porém, esta nova variável virá com o replace já realizado:
     valorParseado2 = valorParseado2.replace(".", ",");
@@ -90,6 +90,7 @@ function botaoTransacao() {
     // Muda o HTML:
     // O novoTotal já virá com o valor (final) corrigido pra vírgula:
     novoTotal.innerHTML = `R$ ${valorParseado2}`;
+    
     // seleciona o elemento que quero trocar:
     let antigoTotal = document.querySelector(".total-valor");
     // Seleciona o pai do antigoTotal:
@@ -106,7 +107,7 @@ function botaoTransacao() {
     Math.sign(valorFinal) == -1
       ? (lucroOuPrejuizo2.textContent = "[Despesa]")
       : (lucroOuPrejuizo2.textContent = "[Lucro]");
-   
+
     mercadoria = `
     <div class="primeiro">
         <p class="primeiro-sinal">${maisOuMenos}</p>
@@ -116,7 +117,7 @@ function botaoTransacao() {
 
     <hr class="hr-main4" />
     `;
-    
+
     // Insere o código de mercadoria dentro do elemento "<div>frame</div>", antes de seu primeiro filho (childNode):
     frame.insertAdjacentHTML("afterbegin", mercadoria);
 
@@ -127,7 +128,7 @@ function botaoTransacao() {
   } else {
     // Atribui o valor inserido no input "Valor" à variável "valorTotal" apenas no 1º cadastro de transação:
     valorTotal = valor;
-    
+
     // Analisa um argumento string e retorna um número de ponto flutuante. Depois faz o replace/troca da vírgula pra ponto.
     // Este é o 1º valor inserido na aplicação:
     valorParseado1 = valor.value;
@@ -158,7 +159,7 @@ function botaoTransacao() {
 
     <p class="lucro">${lucroOuPrejuizo}</p>
     `;
-    
+
     // Adiciona pela 1ª vez o conteúdo de mercadoria dentro do elemento "<div>frame</div>", após seu último filho (childNode):
     frame.insertAdjacentHTML("beforeend", mercadoria);
 
@@ -197,18 +198,42 @@ function limpaLocalStorage() {
 
 // Código do blog "https://www.blogson.com.br/formatar-moeda-dinheiro-com-javascript-do-jeito-facil/":
 function testaCampoValor() {
- let elemento = document.getElementById("tipo_valor");
- let valor = elemento.value;
+  let elemento = document.getElementById("tipo_valor");
+  let valor = elemento.value;
 
- valor = valor + "";
- valor = parseInt(valor.replace(/[\D]+/g, ""));
- valor = valor + "";
- valor = valor.replace(/([0-9]{2})$/g, ",$1");
+  valor = valor + "";
+  valor = parseInt(valor.replace(/[\D]+/g, ""));
+  valor = valor + "";
+  valor = valor.replace(/([0-9]{2})$/g, ",$1");
 
- if (valor.lenght > 6) {
-   valor = valor.replace(/([0-9]{3}),([0-9]{2}$)/g, ".$1,$2");
- }
+  if (valor.lenght > 6) {
+    valor = valor.replace(/([0-9]{3}),([0-9]{2}$)/g, ".$1,$2");
+  }
 
- elemento.value = valor;
- if(valor == "NaN") elemento.value = "";
+  elemento.value = valor;
+  if (valor == "NaN") elemento.value = "";
+}
+
+// Abre menu quando se clica no ícone "x":
+function abrirMenu() {
+  let botaoMenuX = document.querySelector(".menu");
+
+  botaoMenuX.setAttribute(
+    "style",
+    `display: flex; flex-direction: column;
+  align-items: flex-end;
+  padding-right: 20px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 90%;
+  height: 100vh;`
+  );
+}
+
+// Fecha o menu quando se clica no ícone "x":
+function fecharMenu() {
+  let botaoMenuX = document.querySelector(".menu");
+
+  botaoMenuX.setAttribute(`style`, `display: none`);
 }
