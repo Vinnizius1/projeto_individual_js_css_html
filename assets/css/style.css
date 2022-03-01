@@ -145,6 +145,7 @@ MAIN
   display: flex;
   flex-direction: column;
   max-width: 1100px;
+  height: 100vh;
 }
 
 /* 
