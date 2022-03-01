@@ -88,7 +88,7 @@
       <main class="main">
         <!-- Form -->
         <div class="retangulo-tablet">
-          <form class="form">
+          <form class="form" onsubmit="validarSelect(event)">
             <p class="nova-transacao">Nova transação</p>
 
             <div class="display-flex-tablet">
@@ -97,7 +97,7 @@
                   >Compra e Venda</label
                 >
                 <select
-                  name="tipo-select"
+                  name="tipoSelect"
                   id="tipo-select"
                   autofocus
                 >
@@ -135,7 +135,6 @@
             <button
               class="input_botao"
               type="submit"
-              onclick="validarSelect(event)"
             >
               Adicionar transação
             </button>
@@ -154,6 +153,5 @@
       <footer></footer>
     </div>
     <script src="./assets/js/index.js"></script>
-    <script src="./assets/js/validacoes.js"></script>
   </body>
 </html>

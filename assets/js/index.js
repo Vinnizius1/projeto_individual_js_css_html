@@ -1,112 +1,121 @@
 const compraVenda = document.getElementById("tipo-select");
 const nomeDaMercadoria = document.querySelector(".input-mercadoria input");
-const botao = document.querySelector(".input_botao");
 const valor = document.querySelector(".input-valor input");
-const extratos = document.querySelector(".extratos");
-const extrato_mercadoria = document.querySelector(".extrato-mercadoria");
-const extrato_valor = document.querySelector(".extrato-valor");
-
-// "frame" é a div no index.html que recebe a string dos dados/cadastros:
-let frame = document.querySelector(".frame");
-
-// Recebe o valor dinamicamente e depois diz se teve lucro ou despesa?
-let valorTotal = document.querySelector(".total-valor");
-let lucroOuPrejuizo = document.querySelector(".lucro");
 
 // "account" é a div PAI de "frame":
 const account = document.querySelector(".account");
-// Esta "accountUltimoFilhoFrame" receberá "frame", para então excluí-la da DOM por meio da função limpaLocalStorage():
+// Receberá "frame" para então excluí-la da DOM por meio da função limpaLocalStorage()
 const accountUltimoFilhoFrame = account.lastElementChild;
 
-/* Variáveis GLOBAIS */
-// Receberá o conteúdo que será passado pro DOM:
-let mercadoria;
+// "frame" é a div no index.html que recebe a string dos dados cadastrados
+let frame = document.querySelector(".frame");
 
-// Soma cada valor passado no input "Valor" pelo usuário:
+// Recebe o valor dinamicamente e depois diz se teve lucro ou despesa
+let lucroOuPrejuizo = document.querySelector(".lucro");
+
+/* 
+Variáveis GLOBAIS 
+*/
+// Receberá a seleção de compra ou venda, o nome da mercadoria e o valor que serão passados pro DOM
+let mercadoria;
+let mercadorias;
+
+// Receberá os valores finais que serão passados pro DOM
+let hein;
+let mercadoriasHein;
+
+// Somará cada valor passado no input "Valor" pelo usuário
 let valorFinal;
 
-// Arrays criados para armazenarem cada "valor.value" inserido e depois usados numa função que somará os valores:
+// Arrays criados para armazenarem cada "valor.value" inserido e depois usados numa função que os somará
 let valoresAdicionados = [];
 let valoresAdicionados2 = [];
 
-// Receberá os arrays e depois utilizará o método Reduce() pra somar valores:
+// Receberá os arrays e depois utilizará o método Reduce() pra somar valores
 let spread;
 
-// Onde os dados serão armazenados já parseados:
-let mercadorias = JSON.parse(localStorage.getItem("lista")) || [];
-
-// Método forEach() para persistir na tela os dados cadastrados:
-mercadorias.forEach((mercadoria) => {
-  frame.insertAdjacentHTML("afterend", mercadoria);
-});
-
-// Variáveis pro cálculo aceitando vírgula para separar casas decimais:
+// Variáveis pro cálculo aceitando vírgula para separar casas decimais
 let valorParseado; // Será pro 2º valor adicionado
 let valorParseado1; // Este refere-se ao 1º valor inserido na aplicação
 let valorParseado2; // Refere-se ao valor final, dizendo se teve lucro ou despesa
 
-/* FUNÇÃO onclick() no botão "Adicionar transação" */
+/*  */
+mercadorias = JSON.parse(localStorage.getItem("lista")) || [];
+mercadoriasHein = JSON.parse(localStorage.getItem("listaHein")) || [];
+// Método forEach() e o insertAdjacentHTML para persistir na tela os dados cadastrados
+frame.insertAdjacentHTML("afterend", mercadoriasHein);
+mercadorias.forEach((mercadoria) => {
+  frame.insertAdjacentHTML("afterend", mercadoria);
+});
+/*  */
+
+/* 
+Funções 
+*/
+function validarSelect(event) {
+  event.preventDefault();
+
+  let nomeDaMercadoria2 = document.getElementById("tipo_mercadoria").value;
+  let compraVendaSelect = document.getElementById("tipo-select").value;
+  let valor2 = document.getElementById("tipo_valor").value;
+
+  if (
+    compraVendaSelect == undefined ||
+    compraVendaSelect == null ||
+    compraVendaSelect == "" ||
+    nomeDaMercadoria2 == "" ||
+    valor2 == ""
+  ) {
+    alert("Por favor, preencha todos os campos!");
+    return false;
+  } else {
+    botaoTransacao();
+  }
+}
+
 function botaoTransacao() {
-  // Converte a escolha do input "Compra e Venda" para o sinal "+" ou "-":
+  // Converte a escolha do input "Compra e Venda" para o sinal "+" ou "-"
   let maisOuMenos = compraVenda.value;
-  // "0" por causa deste HTML: <option id="compra" value="0">Compra</option>. Se teve compra, o sinal será negativo:
+  // "0" por causa deste HTML: <option id="compra" value="0">Compra</option>. Se teve compra, o sinal será negativo
   maisOuMenos == 0 ? (maisOuMenos = "-") : (maisOuMenos = "+");
 
   // Condição para direcionar o "if/else" logo abaixo:
   let existeLocalstorage = localStorage.getItem("lista");
 
-  // Agora a utilização dessa variável "existeLocalstorage":
   if (existeLocalstorage) {
-    // Este é o 2º array:
-    // valorParseado refere-se ao 2º valor inserido no campo:
+    // valorParseado refere-se ao 2º valor inserido
     valorParseado = valor.value;
     valorParseado = parseFloat(valorParseado.replace(",", "."));
 
-    // Adiciona ao 2º array criado o sinal de "+" ou "-" e soma com o valor passado no input valor (já parseado):
+    // Adiciona ao 2º array o sinal de "+" ou "-", e soma com o valor passado no input valor (já parseado)
     valoresAdicionados2.push(maisOuMenos + valorParseado);
 
-    // Esta spread está com formato em "string". Será convertida pra "number" após esta operação:
+    // Este spread está em formato "string". Será convertido pra "number" após a próxima operação
     spread = [...valoresAdicionados, ...valoresAdicionados2];
 
     valoresAdicionados = valoresAdicionados.map(Number);
     valoresAdicionados2 = valoresAdicionados2.map(Number);
 
-    // Junta os arrays já no tipo "number":
+    // Junta os arrays já no tipo "number"
     spread = [...valoresAdicionados, ...valoresAdicionados2];
 
-    // Método reduce() para trazer a soma dos 2 arrays na variável "valorFinal":
+    // Método reduce() para trazer a soma dos 2 arrays na variável "valorFinal"
     valorFinal = spread.reduce((total, individual) => total + individual);
 
-    // Cria a variável que substituirá a variável do 1º valor passado no input Valor:
-    let novoTotal = document.createElement("p");
-    novoTotal.className = "total-valor";
-
-    // Iguala o valorFinal à variável que virará string para sofrer o replace:
+    // Iguala o valorFinal à variável que virará string para sofrer o replace
     valorParseado2 = valorFinal.toFixed(2);
     valorParseado2 = String(valorParseado2);
-    // Igualamos a string valorParseado2 à ela mesma, porém, esta nova variável virá com o replace já realizado:
+    // Igualamos a string valorParseado2 à ela mesma, porém, esta nova variável virá com o replace já realizado
     valorParseado2 = valorParseado2.replace(".", ",");
 
-    // Muda o HTML:
-    // O novoTotal já virá com o valor (final) corrigido pra vírgula:
-    novoTotal.innerHTML = `R$ ${valorParseado2}`;
-    
-    // seleciona o elemento que quero trocar:
-    let antigoTotal = document.querySelector(".total-valor");
-    // Seleciona o pai do antigoTotal:
-    let pai = antigoTotal.parentNode;
-    // Troca os elementos:
-    pai.replaceChild(novoTotal, antigoTotal);
+    // Método para excluir a div.excluiLinhas
+    let exclui = [...document.querySelectorAll(".excluiLinhas")];
+    exclui.forEach((elemento) => elemento.remove());
 
-    /* 
-    Precisei selecionar novamente o caminho `<p class="lucro">${lucroOuPrejuizo}</p>` uai!
-    DÚVIDA: Por que isso aconteceu? Mudou a REFERÊNCIA???
-    */
-    let lucroOuPrejuizo2 = document.querySelector(".frame .lucro");
-    // Muda o HTML de acordo com esta condição ternária:
+    // Muda o HTML de acordo com a condição ternária
     Math.sign(valorFinal) == -1
-      ? (lucroOuPrejuizo2.textContent = "[Despesa]")
-      : (lucroOuPrejuizo2.textContent = "[Lucro]");
+      ? (lucroOuPrejuizo = "[Despesa]")
+      : (lucroOuPrejuizo = "[Lucro]");
 
     mercadoria = `
     <div class="primeiro">
@@ -114,30 +123,43 @@ function botaoTransacao() {
         <p class="primeiro-lorem">${nomeDaMercadoria.value}</p>      
         <p class="primeiro-valor">R$ ${valor.value}</p>
     </div>
-
     <hr class="hr-main4" />
     `;
 
-    // Insere o código de mercadoria dentro do elemento "<div>frame</div>", antes de seu primeiro filho (childNode):
+    hein = `
+  <div class="excluiLinhas">
+    <hr class="hr-main5" />
+    <div class="totais">
+        <p class="total">Total</p>
+        <p class="total-valor">R$ ${
+          Math.sign(valorFinal) == -1 ? "" : "+"
+        } ${valorParseado2}</p>
+    </div>
+    <p id="lucro" class="lucro">${
+      Math.sign(valorFinal) == -1 ? "[Despesa]" : "[Lucro]"
+    }</p>
+  </div> 
+    `;
+
+    // Métodos para inserir os códigos na DOM
     frame.insertAdjacentHTML("afterbegin", mercadoria);
+    account.insertAdjacentHTML("beforeend", hein);
+    mercadoriasHein = hein;
 
     // Zera os campos após o cadastro do produto:
     nomeDaMercadoria.value = "";
     valor.value = "";
     compraVenda.focus();
   } else {
-    // Atribui o valor inserido no input "Valor" à variável "valorTotal" apenas no 1º cadastro de transação:
-    valorTotal = valor;
-
     // Analisa um argumento string e retorna um número de ponto flutuante. Depois faz o replace/troca da vírgula pra ponto.
-    // Este é o 1º valor inserido na aplicação:
+    // Este é o 1º valor inserido na aplicação
     valorParseado1 = valor.value;
     valorParseado1 = parseFloat(valorParseado1.replace(",", "."));
 
-    // Adiciona ao 1º array criado o sinal de "+" ou "-" e soma com o valor passado no input valor (já parseado):
+    // Adiciona ao 1º array criado o sinal de "+" ou "-", e soma com o valor passado no input valor (já parseado)
     valoresAdicionados.push(maisOuMenos + valorParseado1);
 
-    // Saber se a mensagem será "[Lucro]" ou "[Despesa]":
+    // Saber se a mensagem será "[Lucro]" ou "[Despesa]"
     maisOuMenos == "-"
       ? (lucroOuPrejuizo = "[Despesa]")
       : (lucroOuPrejuizo = "[Lucro]");
@@ -150,32 +172,38 @@ function botaoTransacao() {
     </div>
 
     <hr class="hr-main4" />
-    <hr class="hr-main5" />
-
-    <div class="totais">
-        <p class="total">Total</p>
-        <p class="total-valor">R$ ${maisOuMenos} ${valorTotal.value}</p>
-    </div>
-
-    <p class="lucro">${lucroOuPrejuizo}</p>
     `;
 
-    // Adiciona pela 1ª vez o conteúdo de mercadoria dentro do elemento "<div>frame</div>", após seu último filho (childNode):
-    frame.insertAdjacentHTML("beforeend", mercadoria);
+    hein = `
+  <div class="excluiLinhas">
+    <hr class="hr-main5" />
+    <div class="totais">
+        <p class="total">Total</p>
+        <p class="total-valor">R$ ${maisOuMenos} ${valor.value}</p>
+    </div>
+    <p id="lucro" class="lucro">${lucroOuPrejuizo}</p>
+  </div> 
+    `;
 
-    // Zera os campos após o cadastro do produto:
+    // Esta é a 1ª inserção de código na DOM
+    frame.innerHTML += mercadoria + hein;
+
+    // Zera os campos após o cadastro do produto
     nomeDaMercadoria.value = "";
     valor.value = "";
     compraVenda.focus();
   }
-  // Adição de cada "mercadoria" no array "mercadorias", que por sua vez será enviado para o localStorage via função setItem():
+
+  // Adição de cada "mercadoria" no array "mercadorias", que por sua vez será enviado para o localStorage via função setItem()
   mercadorias.push(mercadoria);
+  mercadoriasHein = hein;
 
   salvaNoLocalStorage();
 }
 
 function salvaNoLocalStorage() {
   localStorage.setItem("lista", JSON.stringify(mercadorias));
+  localStorage.setItem("listaHein", JSON.stringify(mercadoriasHein));
 }
 
 function limpaLocalStorage() {
