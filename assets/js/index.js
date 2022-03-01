@@ -104,6 +104,7 @@ function botaoTransacao() {
 
     // Iguala o valorFinal à variável que virará string para sofrer o replace
     valorParseado2 = valorFinal.toFixed(2);
+    Math.sign(valorParseado2) == -1 ? valorParseado2 = (-(valorParseado2)) : valorParseado2;
     valorParseado2 = String(valorParseado2);
     // Igualamos a string valorParseado2 à ela mesma, porém, esta nova variável virá com o replace já realizado
     valorParseado2 = valorParseado2.replace(".", ",");
@@ -131,9 +132,7 @@ function botaoTransacao() {
     <hr class="hr-main5" />
     <div class="totais">
         <p class="total">Total</p>
-        <p class="total-valor">R$ ${
-          Math.sign(valorFinal) == -1 ? "" : "+"
-        } ${valorParseado2}</p>
+        <p class="total-valor">R$ ${valorParseado2}</p>
     </div>
     <p id="lucro" class="lucro">${
       Math.sign(valorFinal) == -1 ? "[Despesa]" : "[Lucro]"
@@ -179,7 +178,7 @@ function botaoTransacao() {
     <hr class="hr-main5" />
     <div class="totais">
         <p class="total">Total</p>
-        <p class="total-valor">R$ ${maisOuMenos} ${valor.value}</p>
+        <p class="total-valor">R$ ${valor.value}</p>
     </div>
     <p id="lucro" class="lucro">${lucroOuPrejuizo}</p>
   </div> 
