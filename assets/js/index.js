@@ -102,21 +102,19 @@ function botaoTransacao() {
     // Método reduce() para trazer a soma dos 2 arrays na variável "valorFinal"
     valorFinal = spread.reduce((total, individual) => total + individual);
 
-    // Iguala o valorFinal à variável que virará string para sofrer o replace
-    valorParseado2 = valorFinal.toFixed(2);
-    Math.sign(valorParseado2) == -1 ? valorParseado2 = (-(valorParseado2)) : valorParseado2;
-    valorParseado2 = String(valorParseado2);
-    // Igualamos a string valorParseado2 à ela mesma, porém, esta nova variável virá com o replace já realizado
-    valorParseado2 = valorParseado2.replace(".", ",");
+    // Transforma o valor final em moeda brasileira
+    let valorToLocaleString = valorFinal.toFixed(2);
+    Math.sign(valorFinal) == -1
+      ? (valorToLocaleString = -valorToLocaleString)
+      : valorToLocaleString;
+    valorToLocaleString = parseFloat(valorToLocaleString).toLocaleString(
+      "pt-BR",
+      { minimumFractionDigits: 2, style: "currency", currency: "BRL" }
+    );
 
     // Método para excluir a div.excluiLinhas
     let exclui = [...document.querySelectorAll(".excluiLinhas")];
     exclui.forEach((elemento) => elemento.remove());
-
-    // Muda o HTML de acordo com a condição ternária
-    Math.sign(valorFinal) == -1
-      ? (lucroOuPrejuizo = "[Despesa]")
-      : (lucroOuPrejuizo = "[Lucro]");
 
     mercadoria = `
     <div class="primeiro">
@@ -132,7 +130,7 @@ function botaoTransacao() {
     <hr class="hr-main5" />
     <div class="totais">
         <p class="total">Total</p>
-        <p class="total-valor">R$ ${valorParseado2}</p>
+        <p class="total-valor">${valorToLocaleString}</p>
     </div>
     <p id="lucro" class="lucro">${
       Math.sign(valorFinal) == -1 ? "[Despesa]" : "[Lucro]"
@@ -158,6 +156,13 @@ function botaoTransacao() {
     // Adiciona ao 1º array criado o sinal de "+" ou "-", e soma com o valor passado no input valor (já parseado)
     valoresAdicionados.push(maisOuMenos + valorParseado1);
 
+    // Transforma o 1º valor final em moeda brasileira
+    let valorToLocaleString = valorParseado1.toLocaleString("pt-BR", {
+      minimumFractionDigits: 2,
+      style: "currency",
+      currency: "BRL",
+    });
+
     // Saber se a mensagem será "[Lucro]" ou "[Despesa]"
     maisOuMenos == "-"
       ? (lucroOuPrejuizo = "[Despesa]")
@@ -178,7 +183,7 @@ function botaoTransacao() {
     <hr class="hr-main5" />
     <div class="totais">
         <p class="total">Total</p>
-        <p class="total-valor">R$ ${valor.value}</p>
+        <p class="total-valor">${valorToLocaleString}</p>
     </div>
     <p id="lucro" class="lucro">${lucroOuPrejuizo}</p>
   </div> 
@@ -228,14 +233,11 @@ function testaCampoValor() {
   let elemento = document.getElementById("tipo_valor");
   let valor = elemento.value;
 
-  valor = valor + "";
   valor = parseInt(valor.replace(/[\D]+/g, ""));
   valor = valor + "";
   valor = valor.replace(/([0-9]{2})$/g, ",$1");
 
-  if (valor.lenght > 6) {
-    valor = valor.replace(/([0-9]{3}),([0-9]{2}$)/g, ".$1,$2");
-  }
+  //valor = valor.replace(/([0-9]{3}),([0-9]{2})$/g, ".$1,$2");
 
   elemento.value = valor;
   if (valor == "NaN") elemento.value = "";
