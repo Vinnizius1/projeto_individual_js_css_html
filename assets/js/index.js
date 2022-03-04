@@ -39,6 +39,15 @@ let valorParseado; // Será pro 2º valor adicionado
 let valorParseado1; // Este refere-se ao 1º valor inserido na aplicação
 let valorParseado2; // Refere-se ao valor final, dizendo se teve lucro ou despesa
 
+// Mensagem quando não houver mercadoria cadastrada
+let textoSemMercadoriaCadastrada = document.createElement("p");
+textoSemMercadoriaCadastrada.textContent = "Nehuma mercadoria cadastrada";
+textoSemMercadoriaCadastrada.className = "novoTexto";
+
+if (localStorage.length == 0) {
+  account.appendChild(textoSemMercadoriaCadastrada);
+}
+
 /*  */
 mercadorias = JSON.parse(localStorage.getItem("lista")) || [];
 mercadoriasHein = JSON.parse(localStorage.getItem("listaHein")) || [];
@@ -52,6 +61,7 @@ mercadorias.forEach((mercadoria) => {
 /* 
 Funções 
 */
+// 1ª função chamada no "form onsubmit"
 function validarSelect(event) {
   event.preventDefault();
 
@@ -69,6 +79,10 @@ function validarSelect(event) {
     alert("Por favor, preencha todos os campos!");
     return false;
   } else {
+    // Tira a mensagem da tela
+    document.querySelector(".novoTexto").style.display = "none";
+
+    // Chama a função principal
     botaoTransacao();
   }
 }

@@ -20,6 +20,14 @@
   display: none;
 }
 
+/*  */
+.novoTexto {
+  text-align: center;
+  margin-top: 40px;
+  color: #383838;
+  font-family: "Inter", sans-serif;
+}
+
 /* 
 Status Bar
 */
