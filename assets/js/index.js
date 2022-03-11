@@ -93,10 +93,7 @@ function botaoTransacao() {
   // "0" por causa deste HTML: <option id="compra" value="0">Compra</option>. Se teve compra, o sinal será negativo
   maisOuMenos == 0 ? (maisOuMenos = "-") : (maisOuMenos = "+");
 
-  // Condição para direcionar o "if/else" logo abaixo:
-  let existeLocalstorage = localStorage.getItem("lista");
-
-  if (existeLocalstorage) {
+  if (mercadorias) {
     // valorParseado refere-se ao 2º valor inserido
     valorParseado = valor.value;
     valorParseado = parseFloat(valorParseado.replace(",", "."));
@@ -246,9 +243,10 @@ function limpaLocalStorage() {
 function testaCampoValor() {
   let elemento = document.getElementById("tipo_valor");
   let valor = elemento.value;
-
+  
   valor = parseInt(valor.replace(/[\D]+/g, ""));
   valor = valor + "";
+
   valor = valor.replace(/([0-9]{2})$/g, ",$1");
 
   //valor = valor.replace(/([0-9]{3}),([0-9]{2})$/g, ".$1,$2");
