@@ -21,8 +21,8 @@ let mercadoria;
 let mercadorias;
 
 // Receberá os valores finais que serão passados pro DOM
-let hein;
-let mercadoriasHein;
+let ultimasLinhas;
+let mercadoriaFinal;
 
 // Somará cada valor passado no input "Valor" pelo usuário
 let valorFinal;
@@ -50,9 +50,9 @@ if (localStorage.length == 0) {
 
 /*  */
 mercadorias = JSON.parse(localStorage.getItem("lista")) || [];
-mercadoriasHein = JSON.parse(localStorage.getItem("listaHein")) || [];
+mercadoriaFinal = JSON.parse(localStorage.getItem("listaFinal")) || [];
 // Método forEach() e o insertAdjacentHTML para persistir na tela os dados cadastrados
-frame.insertAdjacentHTML("afterend", mercadoriasHein);
+frame.insertAdjacentHTML("afterend", mercadoriaFinal);
 mercadorias.forEach((mercadoria) => {
   frame.insertAdjacentHTML("afterend", mercadoria);
 });
@@ -101,15 +101,13 @@ function botaoTransacao() {
     // Adiciona ao 2º array o sinal de "+" ou "-", e soma com o valor passado no input valor (já parseado)
     valoresAdicionados2.push(maisOuMenos + valorParseado);
 
-    // Este spread está em formato "string". Será convertido pra "number" após a próxima operação
-    spread = [...valoresAdicionados, ...valoresAdicionados2];
-
+    // Converte pra "number"
     valoresAdicionados = valoresAdicionados.map(Number);
     valoresAdicionados2 = valoresAdicionados2.map(Number);
 
     // Junta os arrays já no tipo "number"
     spread = [...valoresAdicionados, ...valoresAdicionados2];
-
+    
     // Método reduce() para trazer a soma dos 2 arrays na variável "valorFinal"
     valorFinal = spread.reduce((total, individual) => total + individual);
 
@@ -136,7 +134,7 @@ function botaoTransacao() {
     <hr class="hr-main4" />
     `;
 
-    hein = `
+    ultimasLinhas = `
   <div class="excluiLinhas">
     <hr class="hr-main5" />
     <div class="totais">
@@ -151,9 +149,8 @@ function botaoTransacao() {
 
     // Métodos para inserir os códigos na DOM
     frame.insertAdjacentHTML("afterbegin", mercadoria);
-    account.insertAdjacentHTML("beforeend", hein);
-    mercadoriasHein = hein;
-
+    account.insertAdjacentHTML("beforeend", ultimasLinhas);
+    
     // Zera os campos após o cadastro do produto:
     nomeDaMercadoria.value = "";
     valor.value = "";
@@ -189,7 +186,7 @@ function botaoTransacao() {
     <hr class="hr-main4" />
     `;
 
-    hein = `
+    ultimasLinhas = `
   <div class="excluiLinhas">
     <hr class="hr-main5" />
     <div class="totais">
@@ -201,7 +198,7 @@ function botaoTransacao() {
     `;
 
     // Esta é a 1ª inserção de código na DOM
-    frame.innerHTML += mercadoria + hein;
+    frame.innerHTML += mercadoria + ultimasLinhas;
 
     // Zera os campos após o cadastro do produto
     nomeDaMercadoria.value = "";
@@ -211,14 +208,15 @@ function botaoTransacao() {
 
   // Adição de cada "mercadoria" no array "mercadorias", que por sua vez será enviado para o localStorage via função setItem()
   mercadorias.push(mercadoria);
-  mercadoriasHein = hein;
-
+  
+  mercadoriaFinal = ultimasLinhas;
+  
   salvaNoLocalStorage();
 }
 
 function salvaNoLocalStorage() {
   localStorage.setItem("lista", JSON.stringify(mercadorias));
-  localStorage.setItem("listaHein", JSON.stringify(mercadoriasHein));
+  localStorage.setItem("listaFinal", JSON.stringify(mercadoriaFinal));
 }
 
 function limpaLocalStorage() {
