@@ -107,7 +107,7 @@ function botaoTransacao() {
 
     // Junta os arrays já no tipo "number"
     spread = [...valoresAdicionados, ...valoresAdicionados2];
-    
+
     // Método reduce() para trazer a soma dos 2 arrays na variável "valorFinal"
     valorFinal = spread.reduce((total, individual) => total + individual);
 
@@ -150,7 +150,7 @@ function botaoTransacao() {
     // Métodos para inserir os códigos na DOM
     frame.insertAdjacentHTML("afterbegin", mercadoria);
     account.insertAdjacentHTML("beforeend", ultimasLinhas);
-    
+
     // Zera os campos após o cadastro do produto:
     nomeDaMercadoria.value = "";
     valor.value = "";
@@ -208,9 +208,9 @@ function botaoTransacao() {
 
   // Adição de cada "mercadoria" no array "mercadorias", que por sua vez será enviado para o localStorage via função setItem()
   mercadorias.push(mercadoria);
-  
+
   mercadoriaFinal = ultimasLinhas;
-  
+
   salvaNoLocalStorage();
 }
 
@@ -241,7 +241,7 @@ function limpaLocalStorage() {
 function testaCampoValor() {
   let elemento = document.getElementById("tipo_valor");
   let valor = elemento.value;
-  
+
   valor = parseInt(valor.replace(/[\D]+/g, ""));
   valor = valor + "";
 
@@ -256,23 +256,19 @@ function testaCampoValor() {
 // Abre menu quando se clica no ícone "x":
 function abrirMenu() {
   let botaoMenuX = document.querySelector(".menu");
+  const mediaTablet = window.matchMedia("(min-width: 768px)");
 
-  botaoMenuX.setAttribute(
-    "style",
-    `display: flex; flex-direction: column;
-  align-items: flex-end;
-  padding-right: 20px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 90%;
-  height: 100vh;`
-  );
+  // Função para modificar o tamanho do menu em tela Tablet ou tela Celular
+  mediaTablet.matches
+    ? botaoMenuX.classList.add("menu-tablet")
+    : botaoMenuX.classList.add("menu-celular");
 }
 
 // Fecha o menu quando se clica no ícone "x":
 function fecharMenu() {
   let botaoMenuX = document.querySelector(".menu");
 
-  botaoMenuX.setAttribute(`style`, `display: none`);
+  // Remove qualquer uma das classes adicionadas pela função abrirMenu()
+  botaoMenuX.classList.remove("menu-celular");
+  botaoMenuX.classList.remove("menu-tablet");
 }

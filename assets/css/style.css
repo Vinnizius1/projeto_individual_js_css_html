@@ -132,9 +132,9 @@ HEADER
 }
 
 /*
-MENU NAVIGATION - HAMBURGUER HOVER EFFECT -
+MENU Hamburguer pra tela de celular
 */
-/* .navigation-box:hover .menu {
+.menu-celular {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -144,7 +144,7 @@ MENU NAVIGATION - HAMBURGUER HOVER EFFECT -
   right: 0;
   width: 90%;
   height: 100vh;
-} */
+}
 
 /* 
 MAIN 
@@ -357,9 +357,16 @@ MEDIA QUERIES
     margin-top: 23px;
   }
 
-  .navigation-box:hover .menu {
-    width: 30%;
+  .menu-tablet {
+    width: 40%;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-right: 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
   }
 }
 
