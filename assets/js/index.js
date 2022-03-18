@@ -37,7 +37,6 @@ let spread;
 // Variáveis pro cálculo aceitando vírgula para separar casas decimais
 let valorParseado; // Será pro 2º valor adicionado
 let valorParseado1; // Este refere-se ao 1º valor inserido na aplicação
-let valorParseado2; // Refere-se ao valor final, dizendo se teve lucro ou despesa
 
 // Mensagem quando não houver mercadoria cadastrada
 let textoSemMercadoriaCadastrada = document.createElement("p");
