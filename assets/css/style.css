@@ -388,12 +388,6 @@ MEDIA QUERIES
     display: none;
   }
 
-  /* Ajustes no ".navigation-box" para manter o onclick ok em: <a href="#" class="limpar-dados">Limpar dados</a> */
-  .navigation-box:hover .menu {
-    width: 357.95px;
-    height: 40px;
-    flex-direction: row;
-  }
   .header .navigation-box .menu {
     display: flex;
     justify-content: space-between;
