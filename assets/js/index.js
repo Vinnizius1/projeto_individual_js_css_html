@@ -26,9 +26,10 @@ let mercadoriaFinal;
 
 // Somará cada valor passado no input "Valor" pelo usuário
 let valorFinal;
+let valorToLocaleString;
 
 // Arrays criados para armazenarem cada "valor.value" inserido e depois usados numa função que os somará
-let valoresAdicionados = [];
+// let valoresAdicionados = [];
 let valoresAdicionados2 = [];
 
 // Receberá os arrays e depois utilizará o método Reduce() pra somar valores
@@ -45,7 +46,7 @@ textoSemMercadoriaCadastrada.className = "novoTexto";
 
 if (localStorage.length == 0) {
   account.appendChild(textoSemMercadoriaCadastrada);
-}
+} 
 
 /*  */
 mercadorias = JSON.parse(localStorage.getItem("lista")) || [];
@@ -79,7 +80,8 @@ function validarSelect(event) {
     return false;
   } else {
     // Tira a mensagem da tela
-    document.querySelector(".novoTexto").style.display = "none";
+    //document.querySelector(".novoTexto").style.display = "none";
+    textoSemMercadoriaCadastrada.remove();
 
     // Chama a função principal
     botaoTransacao();
@@ -96,22 +98,22 @@ function botaoTransacao() {
     // valorParseado refere-se ao 2º valor inserido
     valorParseado = valor.value;
     valorParseado = parseFloat(valorParseado.replace(",", "."));
-
+    
     // Adiciona ao 2º array o sinal de "+" ou "-", e soma com o valor passado no input valor (já parseado)
     valoresAdicionados2.push(maisOuMenos + valorParseado);
 
     // Converte pra "number"
-    valoresAdicionados = valoresAdicionados.map(Number);
+    // valoresAdicionados = valoresAdicionados.map(Number);
     valoresAdicionados2 = valoresAdicionados2.map(Number);
-
+    
     // Junta os arrays já no tipo "number"
-    spread = [...valoresAdicionados, ...valoresAdicionados2];
-
+    spread = [...valoresAdicionados2];
+    
     // Método reduce() para trazer a soma dos 2 arrays na variável "valorFinal"
     valorFinal = spread.reduce((total, individual) => total + individual);
 
     // Transforma o valor final em moeda brasileira
-    let valorToLocaleString = valorFinal.toFixed(2);
+    valorToLocaleString = valorFinal.toFixed(2);
     Math.sign(valorFinal) == -1
       ? (valorToLocaleString = -valorToLocaleString)
       : valorToLocaleString;
@@ -161,10 +163,11 @@ function botaoTransacao() {
     valorParseado1 = parseFloat(valorParseado1.replace(",", "."));
 
     // Adiciona ao 1º array criado o sinal de "+" ou "-", e soma com o valor passado no input valor (já parseado)
-    valoresAdicionados.push(maisOuMenos + valorParseado1);
+    // valoresAdicionados.push(maisOuMenos + valorParseado1);
+    // console.log(valoresAdicionados)
 
     // Transforma o 1º valor final em moeda brasileira
-    let valorToLocaleString = valorParseado1.toLocaleString("pt-BR", {
+      valorToLocaleString = valorParseado1.toLocaleString("pt-BR", {
       minimumFractionDigits: 2,
       style: "currency",
       currency: "BRL",
