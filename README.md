@@ -1,5 +1,7 @@
-### Projeto individual brábo do módulo *"HTML, CSS e JS"*   
-:man_technologist: Objetivo > construir uma SPA (Single Page Application) seguindo o layout proposto no Figma:  
+### Projeto individual brábo do módulo *"HTML, CSS e JS"* *(Individual project)*   
+:man_technologist: Objective > To build a SPA (Single Page Application) following the layout from Figma:   
+:man_technologist: Objetivo > construir uma SPA (Single Page Application) seguindo o layout proposto no Figma:
+
 
 https://www.figma.com/file/U8ojEXx2vxSK2KOvoBvHVH8y/Frontend-test?node-id=13%3A42    
   
